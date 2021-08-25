@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+	<group formid="engravingline1">
+		<field 
+			formid="engravingline1" 
+			label="label.input.engravingline1.engraving" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field 
+			formid="engravingline2" 
+			label="label.input.engravingline2.engraving" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field
+			formid="engravingline3" 
+			label="label.input.engravingline3.engraving" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			parse-error="error.message.parse.email.engraving.form"
+			range-error="error.message.50orless"
+			regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" 
+			value-error="ValueErrorText"
+			type="string"/> 
+			<!-- TODO value-error not comming back from the platform -->
+
+		<field 
+			formid="engravingline4"
+			label="label.input.engravingline4.engraving"
+			mandatory="true"
+			max-length="50"
+			missing-error="error.message.required"
+			parse-error="error.message.parse.email.engraving.form"
+			range-error="error.message.50orless"
+			regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"
+			value-error="ValueErrorText"
+			type="string"/> 
+			<!-- TODO value-error not comming back from the platform -->
+			
+		<field 
+			formid="engravingline5"
+			label="label.input.engravingline5.engraving"
+			mandatory="true"
+			regexp="^\(?([2-9][0-8][0-9])\)?[\-\. ]?([2-9][0-9]{2})[\-\. ]?([0-9]{4})(\s*x[0-9]+)?$"
+			missing-error="error.message.required"
+			parse-error="error.message.parse.phone.engraving.form"
+			type="string"/> 
+
+
+	</group>
+</form>
+

@@ -1,0 +1,11 @@
+<div>
+<p class="line-item-attributes ${lineItem.UUID}">&nbsp;</p>
+<p class="line-item-attributes ${lineItem.UUID}">Personalization</p>
+
+<isset name="engravingLineItem" value="${JSON.parse(lineItem.engravingJson)}" scope="page"/>
+<isset name="engravingItems" value="${Object.keys(engravingLineItem)}" scope="page"/>
+<isloop items=${engravingItems} var="line" status="status"> 
+ <p class="line-item-attributes ${lineItem.UUID}">Line <isprint value=${status.index + 1} style="INTEGER"/> - ${engravingLineItem[line]}</p>
+</isloop>
+<p class="line-item-attributes ${lineItem.UUID}">&nbsp;</p>
+</div>

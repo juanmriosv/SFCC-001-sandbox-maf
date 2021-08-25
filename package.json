@@ -1,0 +1,19 @@
+{
+  "name": "medicalert-foundation-sfcc",
+  "version": "1.0.0",
+  "description": "stylesheet",
+  "main": "index.js",
+  "watches": {
+    "scss": "scss/**"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Manuel Rios Villanueva",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "node-sass": "^6.0.1",
+    "rerun-script": "^0.6.0"
+  }
+}

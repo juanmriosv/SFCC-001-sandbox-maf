@@ -1,0 +1,4 @@
+<isslot id="maf-plp-banner-m" description="Banner for Category Listing Page" context="global" />
+
+<!-- MAF MEMBERS PLANS MODAL -->
+<isinclude template="components/maf_blocks/plansModalDefault" />

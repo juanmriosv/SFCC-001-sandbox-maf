@@ -1,0 +1,11 @@
+<div class="col-12">
+Personalization
+<isloop items=${pdict.engraving} var="line" status="status">
+
+<isset name="engravingValue" value="${pdict.engravingValues['engravingline'+(status.index + 1)]}" scope="page"/>
+<p class="col-12">
+Line <isprint value=${status.index + 1} style="INTEGER"/>: <input type="text" id="engravingline<isprint value=${status.index + 1} style="INTEGER"/>" maxlength="${line}" value="${engravingValue? engravingValue:''}" class="inputfield_en not_disabled">
+</p>
+</isloop>
+
+</div>

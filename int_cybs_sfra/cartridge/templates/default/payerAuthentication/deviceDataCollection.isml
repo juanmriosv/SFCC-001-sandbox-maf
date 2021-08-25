@@ -1,0 +1,15 @@
+<isdecorate template="common/layout/checkout">
+	<form id="collectionForm" name="devicedata" target="paFrame" method="POST" action="${pdict.deviceDataUrl}">
+		<input type="hidden" id="bin" name="Bin" value="${pdict.cardNumber}" />
+		<input type="hidden" name="JWT" value="${pdict.jwtToken}" />
+	</form>
+	<iFrame style="border: none; overflow:hidden; width:100%; height:755px; margin: 70px auto 0;" scrolling="no" id="myFrame"
+	 name="paFrame" src=""></iFrame>
+	<script>
+    window.onload = function() {
+            // Auto submit form on page load
+                document.getElementById('collectionForm').submit();
+            }
+
+    </script>
+</isdecorate>
