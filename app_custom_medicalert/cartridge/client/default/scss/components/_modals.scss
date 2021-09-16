@@ -1,0 +1,69 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+           MODALS COMPONENT SCSS
+    ==================================
+*/
+.modal-background{
+    z-index: 9;
+}
+.modal .modal-title,
+.modal .modal-body h3,
+.modal .full-pdp-link{
+    font-size: 1em;
+    font-weight: bold;
+    font-weight: 600;
+}
+.modal .modal-body,
+.modal .maf-modal-body{
+    padding: 2em 1em 3em;
+}
+.modal .modal-header{
+    background: #457796;
+}
+.modal .modal-header,
+.modal .modal-header .modal-title,
+.modal .modal-header .full-pdp-link,
+.modal .modal-header button,
+.modal .modal-header button span{
+    color:white;
+    text-shadow:none;
+}
+.modal .modal-body h3{
+    font-size: 1.2em;
+}
+.modal-dialog button.close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.modal .modal-body div.maf-button{
+    position: absolute;
+    bottom: -1em;
+    left: 0;
+    width: 100%;
+}
+.maf-modal-main{
+    button{
+        &.btn-link{
+            font-weight: bold;
+            font-weight: 500;
+            border-bottom: solid 1px;
+            padding: 0;
+            margin: 1em 0 0;
+            font-size: 0.85em;
+            color:#0A8558;
+            &:hover,
+            &:focus{
+                text-decoration: none;
+                color: #1D3557;
+            }
+        }
+    }
+
+}
+@media (min-width: 768px) {
+    .modal .modal-title{
+        font-size: 1.3em;
+    }
+}

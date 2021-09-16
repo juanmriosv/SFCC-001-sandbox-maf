@@ -1,0 +1,114 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ===============================
+            PLP SFCC SCSS
+    ===============================
+
+*/
+
+
+div.search-results.container,
+div.search-results .container,
+div.container.maf-plp-banner-wrap,
+div.maf-element-h1{
+    max-width:1920px;
+}
+div.search-results{
+    padding: 0 15px;
+}
+div.search-results > div.row{
+    margin:0;
+}
+div.search-results > div.search-nav{
+    margin: 0 0 1em;
+}
+div.maf-element-h1{
+    padding: 1em 30px;
+}
+div#maincontent .maf-plp-banner-wrap{
+    padding:0;
+}
+
+@media (min-width: 768px) {
+    .search-results .tab-content,
+    .search-results #product-search-results{
+        padding:0;
+    }
+    div.search-results{
+        padding: 0 30px;
+    }
+}
+@media (min-width: 992px) {
+    div.search-results{
+        padding: 0;
+    }
+}
+
+@media (max-width: 544px) {
+    div#product-search-results,
+    div#product-search-results div:nth-of-type(2) > div.col-sm-12{
+        padding: 0;
+    }
+    div#product-search-results .row{
+        margin: 0;
+    }
+    div#product-search-results .grid-header{
+        margin: 0;
+    }
+    div#product-search-results .grid-header div.col-6{
+        padding:0;
+    }
+    
+    div.search-results > div.search-nav{
+        margin: 0;
+    }
+    
+    // [START] Product Grid
+    .product-grid > div{
+        box-shadow: -1px 7px 30px #e5e7e8;
+        margin: 0 0 3%;
+        border-radius: 30px;
+        &:last-of-type{
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+        }
+        .pdp-link{
+            font-size: 1.4em;
+            font-weight: bold;
+            font-weight: 600;
+        }
+        .price{
+            font-size: 1.3em;
+            span{
+                color: #1d3557;
+            }
+        }
+    }
+    // [END] Product Grid
+
+    // [START] Filter and Sorting
+    #product-search-results > div.grid-header{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        background: #ffffff;
+        z-index: 99;
+        box-shadow: -3px -1px 3px #cccccc;
+        .result-count{
+            font-weight:bold;
+            font-weight:600;
+            padding: 0.3em 0;
+            background: #457796eb;
+            span{
+                color:#ffffff;
+            }
+        }
+        .product-grid{
+            padding-top:0;
+        }
+        
+    }
+    // [END] Filter and Sorting
+}

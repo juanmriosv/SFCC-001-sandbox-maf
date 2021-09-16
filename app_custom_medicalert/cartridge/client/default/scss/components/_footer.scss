@@ -1,0 +1,230 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+                FOOTER SCSS
+    ==================================
+
+*/
+// footer {
+  // background-color: #e9ecef;
+  // padding-top: 1.25em;
+  /* 20/16 */
+  // padding-bottom: 1.25em;
+// }
+footer{
+    background: none;
+    padding: 0;
+}
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+footer .social h2 {
+    margin-top: 0; 
+}
+footer .social::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+footer .footer-copyright p.copyright{
+    margin: 1.03em 0;
+}
+footer .footer-container .footer-item.collapsible-xs button {
+    font-family: 'Dosis', sans-serif;
+    padding: 0;
+}
+footer .social-links {
+    float: left;
+}
+footer .social-links::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+@media (max-width: 543.98px) {
+    footer .social-links {
+        width: 80%;
+    }
+}
+footer .social-links li {
+    float: left;
+    margin: 0.313em;
+}
+
+// @media (max-width: 543.98px) {
+//     footer .social-links li {
+//         width: 20%;
+//         text-align: center;
+//     }
+// }
+footer .social-links a {
+    font-size: 2.25em;
+}
+footer .social-links a:hover {
+    text-decoration: none;
+}
+@media (max-width: 543.98px) {
+    footer .store {
+        border-bottom: 1px solid #444;
+    }
+    footer .store .content {
+        display: none;
+    }
+    footer .store h2::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+    footer .store h2::after {
+        font-family: "FontAwesome";
+        float: right;
+        content: "\F041";
+    }
+}
+footer .content {
+    font-size: 0.875em;
+}
+footer .content li {
+    height: 1.875rem;
+}
+footer .copyright,
+footer .postscript {
+    font-size: 0.8125em;
+}
+// footer .copyright {
+//   margin-bottom: 0.625em; }
+footer .back-to-top {
+    margin: 0.1em 0.313em;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+// [START] BACK TO TOP
+footer .back-to-top i.fa-arrow-up {
+    color: var(--maf-o-footer-back_to_top-link_arrow);
+}
+footer .back-to-top i.fa-circle {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+footer .back-to-top i.fa-arrow-up:hover,
+footer .back-to-top i.fa-arrow-up:focus{
+    color: var(--maf-o-footer-back_to_top-link_arrow_hover);
+}
+// [END] BACK TO TOP
+
+@media (max-width: 543.98px) {
+    .footer-item {
+        border-bottom: 1px solid #444;
+    }
+}
+
+// ====================
+//    EMAIL SIGN UP
+// ====================
+.maf-organism-footer-email-signup{
+    background-color: var(--maf-o-footer-email_sign_up-background);
+    padding: 3em 1.1em;
+}
+.maf-organism-footer-email-signup .maf-header-email-sign-up{
+    text-align: center;
+    margin: 0 0 3%;
+}
+.maf-organism-footer-email-signup .maf-header-email-sign-up h2{
+    font-weight: bold;
+    font-weight: 600;
+    color: var(--maf-o-footer-email_sign_up-header);
+}
+
+
+// ==================
+//     NAVIGATION
+// ==================
+.maf-organism-footer-navigation h2 {
+    font-size: 1em;
+    margin-bottom: 0;
+    color: var(--maf-o-footer-main_nav-text-title);
+    /* 40/16 */
+}
+.maf-organism-footer-navigation .footer-item{
+    margin: 0 0 3%;
+}
+.footer-item-c1 .maf-footer-logo{
+    width: 63%;
+    margin: 0 0 7%;
+}
+.maf-organism-footer-navigation{
+    background-color: var(--maf-o-footer-main_nav-background);
+    padding: 3em 1.1em;
+}
+.maf-organism-footer-navigation h3{
+    font-size: 1.23em;
+    font-weight: 600;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 1.03em;
+}
+.maf-organism-footer-navigation ul{
+    margin-bottom:0;
+}
+.maf-organism-footer-navigation .footer-title,
+.maf-organism-footer-navigation a,
+.footer-item-c1 a span{
+    color: var(--maf-o-footer-main_nav-text-title);
+}
+footer .maf-organism-footer-navigation a:hover,
+footer .maf-organism-footer-navigation a:focus{
+    text-decoration: none;
+}
+footer div.medicphone{
+    margin: 5% 0 7%;
+    font-size: 1.33em;
+    font-weight: 600;
+    font-weight: bold;
+}
+footer .maf-organism-footer-navigation .social{
+    margin: 0 0 3%;
+}
+footer .maf-organism-footer-navigation ul.social-links a:hover,
+footer .maf-organism-footer-navigation ul.social-links a:focus{
+    color: var(--maf-o-footer-social-links);
+}
+.maf-organism-footer-navigation .medicphone img{
+    width:auto;
+}
+// =================
+//       LEGAL
+// =================
+.maf-organism-footer-legal{
+    background-color: var(--maf-o-footer-legal_nav-background);
+}
+.maf-organism-footer-legal ul{
+    justify-content: flex-start;
+}
+.maf-organism-footer-legal .back-to-top{
+    position: absolute;
+    right: 0;
+    bottom: 0em;
+    z-index: 99;
+}
+// =================
+//     COPYRIGHT
+// =================
+.maf-organism-footer-copyright{
+    background-color: var(--maf-o-footer-copyright-background);
+}
+
+@media (min-width: 768px) {
+
+    // =========================
+    //  MAIN NAVIGATION MIN 768
+    // =========================
+    .maf-organism-footer-navigation .footer-item{
+        margin:0;
+    }
+    footer .maf-organism-footer-navigation .social{
+        margin: 0%;
+    }
+
+}

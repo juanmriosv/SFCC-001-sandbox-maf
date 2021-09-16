@@ -1,0 +1,62 @@
+<div>
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#membershipModal">
+  View Options
+</button>
+</div>
+<div id="membershipModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridModalLabel">Membership Subscription Plans</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span3">
+                <h4><a href="" id="btnBasic">Basic</a></h4>
+                <p>My Vaccination Records+</p>
+                <p>         </p>
+                <p> $24.99 </p>
+            </div>
+            <div class="span3">
+                <h4><a href="" id="btnAdv">Advantage</a></h4>
+                <p>Basic+</p>
+                <p>       </p>
+                <p>$49.99  </p>
+            </div>
+            <div class="span3">
+                <h4><a href="" id="btnAdvP">Advantage Plus</a></h4>
+                <p>Advantage +</p>
+                <p>    </p>
+                <p>$74.99 </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+
+  $('#btnBasic').click(function(e) {
+    var value1 = 'x';
+    e.preventDefault();
+    membershipPlans.selectedIndex=1;
+    $("#membershipModal").modal("toggle");
+  });
+  $('#btnAdv').click(function(e) {
+    var value1 = 'x';
+    e.preventDefault();
+    membershipPlans.selectedIndex=2;
+    $("#membershipModal").modal("toggle");
+  });
+  $('#btnAdvP').click(function(e) {
+    var value1 = 'x';
+    e.preventDefault();
+    membershipPlans.selectedIndex=3;
+    $("#membershipModal").modal("toggle");
+    });
+  
+});
+    </script>

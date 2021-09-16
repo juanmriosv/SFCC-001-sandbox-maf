@@ -1,0 +1,106 @@
+<div id="membershipModalPDP" class="modal maf-modal-memberships fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title" id="membershipModalDefaultLabel">Membership Subscription Plans</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+
+            <div class="modal-body-membership container-fluid">
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                      <section class="maf-plan maf-plan-basic">
+                        <h3><a class="maf-link-secondary" href="" id="btnBasic">Basic</a></h3>
+                        <p>$24.99 /year</p>
+                        <ul>
+                          <li>24/7 Medical Information Response Team</li>
+                          <li>Secure Self-Reported Health Record</li>
+                        </ul>
+
+                        <div class="maf-button">
+                          <a id="btnBasic_s" type="button" class="btn btn-content btn-outline-info">Select</a>
+                        </div>
+                      </section>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                      <section class="maf-plan maf-plan-advantage">
+                      <label class="most-popular-label">Most Popular</label>
+                        <h3><a class="maf-link-secondary" href="" id="btnAdv">Advantage</a></h3>
+                        <p>$49.99 /year</p>
+                        <ul>
+                            <li>Basic +</li>
+                            <li>24/7 Wandering Support</li>
+                            <li>Emergency Contact Notification</li>
+                        </ul>
+
+                        <div class="maf-button">
+                            <a id="btnAdv_s" type="button" class="btn btn-content btn-primary">Select</a>
+                        </div>
+                      </section>
+
+                    </div>
+
+                    <div class="col-md-4">
+                      <section class="maf-plan maf-plan-advantage-plus">
+                        <h3><a class="maf-link-secondary" href="" id="btnAdvP">Advantage Plus</a></h3>
+                        <p>$74.99 /year</p>
+                        <ul>
+                            <li>Advantage +</li>
+                            <li>Physician Notification</li>
+                            <li>Advance Directive/DNR</li>
+                        </ul>
+                        <div class="maf-button">
+                            <a id="btnAdvP_s" type="button" class="btn btn-content btn-outline-info">Select</a>
+                        </div>
+                        </section>
+                      </div>
+
+		    </div>
+
+
+		  </div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+$(function() {
+
+  $('#btnBasic, #btnBasic_s').click(function(e) {
+    var value1 = 'x';
+    e.preventDefault();
+    membershipPlans.selectedIndex=1;
+    $("#membershipModalPDP").modal("toggle");
+    element_scroll_focus('#membershipPlans');
+  });
+  $('#btnAdv, #btnAdv_s').click(function(e) {
+    var value1 = 'x';
+    e.preventDefault();
+    membershipPlans.selectedIndex=2;
+    $("#membershipModalPDP").modal("toggle");
+    element_scroll_focus('#membershipPlans');
+  });
+  $('#btnAdvP, #btnAdvP_s').click(function(e) {
+    var value1 = 'x';
+    e.preventDefault();
+    membershipPlans.selectedIndex=3;
+    $("#membershipModalPDP").modal("toggle");
+    element_scroll_focus('#membershipPlans');
+    });
+});
+
+function element_scroll_focus(element){
+  $('html, body').animate({
+    scrollTop: $(element).offset().top-200
+  });
+  $(element).focus();
+ 
+}
+</script>

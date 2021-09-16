@@ -1,0 +1,75 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ===============================
+            PDP SFCC SCSS
+    ===============================
+
+*/
+.product-detail{
+    width: 94%;
+    padding: 0;
+    &> .row{
+        margin-left:0;
+        margin-right:0;
+    }
+    .product-number{
+        color: var(--color-black);
+        .product-id{
+            font-weight: bold;
+            font-weight: 700;
+        }
+    }
+    .product-number-rating{
+        background: var(--pdp-rating-product-bg);
+        padding: 0 3%;
+        border-color: var(--pdp-rating-product-border);
+    }
+    .attributes{
+        padding-left: 0;
+        padding-right: 0;
+        label,
+        .color,
+        .product-availability .availability,
+        .non-input-label{
+            color: #457796;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        &>div{
+            margin: 0 0 1.5em;
+            &:nth-of-type(3){
+                margin: 0;
+            }
+        }
+    }
+}
+.h1.product-name{
+    margin: 0 0 0.5em;
+}
+// [START] CAROUSEL
+.product-detail{
+    .carousel{
+        &> a{
+            position: absolute;
+            top:0;
+        }
+        .carousel-control-prev{
+            left:0;
+        }
+        .carousel-control-next{
+            right:0;
+        }
+        .icon-next,
+        .icon-prev{
+            background:#F0F9F9;
+        }
+        ol.carousel-indicators > {
+            background-color: #457796;
+        }
+
+    }
+}
+// [END] CAROUSEL

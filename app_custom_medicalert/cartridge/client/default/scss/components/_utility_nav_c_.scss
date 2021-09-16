@@ -1,0 +1,36 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+           UTILITY NAV COMPONENT
+    ==================================
+
+*/
+
+.maf-organism-utility-nav{
+    background: var(--color-grey3);
+}
+.maf-c-nav-utility{
+    list-style: none;
+}
+.maf-c-nav-utility li{
+    font-size: 0.8em;
+    border-right:solid 1px var(--color-grey4);
+}
+@media (min-width: 768px) {
+    .maf-c-nav-utility{
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: -webkit-box-flex;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        align-items: center;
+        -webkit-align-items: center;
+        -ms-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        -ms-justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+}

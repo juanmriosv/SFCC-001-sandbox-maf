@@ -1,0 +1,109 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ========================================
+        PLP BANNER DEFAULT COMPONENT SCSS
+    ========================================
+
+*/
+
+a.maf-text-link-default{
+    font-weight: bold;
+    font-weight: 600;
+    border-bottom: solid 1px;
+    line-height: 1;
+}
+.maf-components-banner-plp-default img{
+	width: 100%;
+}
+.maf-components-banner-plp-default .maf-icons span{
+    font-weight: bold;
+    font-weight: 600;
+    font-size: 3em;
+}
+.maf-components-banner-plp-default .maf-icons span.maf-brake-desktop{
+	font-size: 1em;
+}
+.maf-components-banner-plp-default .maf-icons{
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+	overflow: auto;
+  	align-items: center;
+  	justify-content: center;
+}
+
+.maf-components-banner-plp-default figure{
+
+}
+.maf-components-banner-plp-default figcaption{
+	text-align: center;
+}
+.maf-components-banner-plp-default figcaption span{
+	display: block;
+}
+.maf-components-banner-plp-default > div:nth-of-type(1){
+    background: white;
+    padding: 2.5% 3% 2.5% 3%;
+    font-size: 3vw;
+}
+.maf-components-banner-plp-default > div:nth-of-type(2){
+	padding: 5%;
+    background: #1d3557;
+    text-align: left;
+}
+.maf-components-banner-plp-default > div:nth-of-type(2) p,
+.maf-components-banner-plp-default > div:nth-of-type(2) a{
+	color: #ffffff;
+}
+.maf-plp-banner-wrap{
+	text-align: center;
+    margin: 0 0 1em;
+}
+.maf-button{
+	margin: 1em 0 0;
+}
+
+
+@media (min-width: 768px) {
+	.maf-button-m-m0{
+		margin: 0;
+	}
+	.maf-components-banner-plp-default > div:nth-of-type(2){
+		padding: 5% 5% 5% 3%;
+	}
+
+	span.maf-brake-desktop{
+		display: block;
+	}
+	.maf-components-banner-plp-default > div:nth-of-type(1){
+		font-size: 1.1vw;
+	}
+	.maf-components-banner-plp-default{
+		display: -ms-flex;
+		display: -webkit-flex;
+		display: flex;
+		overflow: auto;
+		overflow: auto;
+  		align-items: center;
+  		justify-content: center;
+	}
+	.maf-components .maf-col-2{
+		flex: 2;
+		order: 0;
+	}
+	.maf-components .maf-float-right{
+		order: 1;
+		flex: 3;
+	}
+ 	.collapse.dont-collapse-sm {
+		display: -ms-flex;
+		display: -webkit-flex;
+		display: flex;
+    	height: auto !important;
+    	visibility: visible;
+    	margin: 0 0 2em;
+  	}
+  	.maf-btn-toggle{
+  		display: none;
+  	}
+}

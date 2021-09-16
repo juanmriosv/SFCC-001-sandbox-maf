@@ -1,0 +1,35 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ========================================
+        ARCHIVE PAGE DEFAULT LAYOUT SCSS
+    ========================================
+*/
+
+.maf-component-archive article .maf-excerpt-wrapper h3{
+    font-size: 1.45em;
+    font-weight: bold;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 0 1em;
+  }
+  .maf-component-archive .maf-date-time{
+    margin: 0 0 4%;
+  }
+  .maf-component-archive article .post-categories{
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+  }
+  .maf-component-archive article .post-categories > li{
+    display: inline-block;
+  }
+  .maf-component-archive article .post-categories > li:before{
+    content: ' | ';
+    color:var(--color-grey6);
+  }
+  .maf-component-archive article .post-categories > li:first-of-type:before{
+    content:'';
+  }
+section.maf-posts-main-wrap > div.maf-component-most-recent-horizontal{
+    margin: 0 0 3em;
+}

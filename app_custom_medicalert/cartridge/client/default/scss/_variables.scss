@@ -1,31 +1,29 @@
-// @import "bootstrap/scss/functions";
-
 // font-awesome font file locations in relation to target location of the css file.
 $fa-font-path: "../fonts" !default;
 
 // flag icons location in relation to target location of the css file.
 $flag-icon-css-path: "../fonts/flags/" !default;
 
-$white: #fff !default;
-$black: #000 !default;
-$blue: #0070d2 !default;
-$green: #008827 !default;
+$white: #ffffff !default;
+$black: #000000 !default;
+$blue: #1D3557 !default;
+$green: #0A8558 !default;
 // primary is replaced by css variable --skin-primary-color-1
-$primary: #00a1e0 !default;
-$red: #c00 !default;
+$primary: #0A8558 !default;
+$red: #D82A32 !default;
 $success: $green !default;
 $danger: $red !default;
 $light-blue: #7ed0ee !default;
 
 // Consolidated values
-$grey1: #f9f9f9 !default;
-$grey2: #eee !default;
-$grey3: #ccc !default;
-$grey4: #999 !default;
-$grey5: #666 !default;
-$grey6: #444 !default;
-$grey7: #222 !default;
-$grey8: #333 !default;
+$grey1: #F8F7F8 !default;
+$grey2: #E5E7E8 !default;
+$grey3: #CDD0D3 !default;
+$grey4: #818991 !default;
+$grey5: #37434F !default;
+$grey6: #051424 !default;
+$grey7: #051221 !default;
+$grey8: #000000 !default;
 $grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
 $grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
 

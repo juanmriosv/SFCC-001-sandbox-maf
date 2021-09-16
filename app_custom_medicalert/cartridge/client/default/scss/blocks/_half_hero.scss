@@ -1,0 +1,37 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ===============================
+        HALF HERO CONTENT BLOCK
+    ===============================
+
+*/
+
+
+.maf-content-component-half-hero h1,
+.maf-content-component-half-hero h2,
+.maf-content-component-half-hero p{
+    color: #ffffff;
+    margin:0;
+}
+.maf-content-component-half-hero p{
+    text-transform: capitalize;
+}
+.maf-organism-main-body .maf-content-component-half-hero h1{
+    font-size: 3.1em;
+    margin: 0 0 2%;
+    font-family: var(--h1-layout-content);
+    line-height: 1.1;
+}
+.maf-content-component-half-hero-1{
+    background-image: linear-gradient(to right, #1D3557 , #457796);
+}
+.maf-content-component-half-hero .maf-content-component-main-wrap > div{
+    flex: 1;
+}
+
+@media (max-width: 576px) {
+    .maf-hero-half{
+        padding: 5% 0 0;
+    }
+}
+

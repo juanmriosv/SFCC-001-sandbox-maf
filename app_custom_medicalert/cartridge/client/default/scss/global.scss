@@ -1,24 +1,50 @@
-@charset "UTF-8";
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ===============================
+        BOOTSTRAP OVERWRITE SCSS
+    ===============================
 
-@import "variables";
+*/
+
+// @import "~base/global";
+@import "base_sfra";
+@import 'general';
+@import 'variables';
+@import "fonts";
 @import "skin/skinVariables";
-@import "bootstrap-custom-import";
-@import "bootstrapOverrides";
-@import "utilities/responsiveUtils";
-@import "~font-awesome/scss/font-awesome";
-@import "~flag-icon-css/sass/flag-icon";
-@import "components/common";
-@import "components/header";
-@import "components/footer";
-@import "components/hero";
+
+
+@import 'elements/page-headers';
+@import 'elements/buttons';
+@import 'elements/button_donate_top_nav_e_';
+@import 'elements/post_type_header_e_';
+@import 'elements/progress_bars_e_';
+
 @import "components/headers";
-@import "components/notification";
-@import url(https://fonts.googleapis.com/css?family=Dosis&subset=latin-ext);
-@import "components/pricing";
-@import "components/productTiles";
-@import "components/tabs";
-@import "components/breadcrumb";
-@import "components/spinner";
-@import "miniCart";
-@import "components/tooltip";
-@import "components/headerSearch";
+@import "components/modals";
+@import "components/header";
+@import "components/global_banner_c_";
+@import "components/main_navigation_c_";
+@import "components/utility_nav_c_";
+@import 'components/system_nav_c_';
+@import 'components/footer';
+@import 'components/search_c_';
+@import 'components/breadcrumb';
+@import 'components/pagination_c_';
+@import 'components/engraving_c_';
+
+@import 'layouts/pages_layout';
+@import 'layouts/content_pages_layout';
+@import 'layouts/archive_pages_layout.scss';
+@import 'layouts/page_template/_conditions_page_template.scss';
+@import 'layouts/page_template/post_blog_template_';
+@import "layouts/plp_layout";
+@import "layouts/pdp_layout";
+
+@import 'blocks/block-cover-guttenberg';
+@import "blocks/dividers";
+@import "blocks/_plp_banner_default_b_";
+@import 'blocks/half_hero';
+@import 'blocks/post_horizontal_c_';
+@import 'blocks/post_vertical_c_';
+@import 'blocks/page_2_columns_c_';

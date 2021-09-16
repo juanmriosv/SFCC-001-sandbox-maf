@@ -1,0 +1,29 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ============================
+        CSSS FOR ADMIN PAGE
+    ============================
+*/
+@import url(https://bdtn-003.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/Sites-medicalert-Site/-/en_US/v1621693962477/css/global.css);
+
+#wpcontent{
+    background:#ffffff;
+}
+
+/* [START] Top Banner */
+.ma-admin-preview-wrap .header-banner {
+    background-color: #D82A32;
+}
+.ma-admin-preview-wrap .header-banner a {
+    color: #ffffff;
+    display: inline-block;
+}
+.ma-admin-preview-wrap .header-banner a span {
+    border-bottom: solid white 1px;
+    display: block;
+    width: 100%;
+}
+.ma-admin-preview-wrap{
+    min-height: 150px;
+}
+/* [END] Top Banner */

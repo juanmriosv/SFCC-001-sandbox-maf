@@ -1,7 +1,72 @@
-<iscomment> juanma 08.19.21 </iscomment>
+<iscomment> juanma 08.30.21 </iscomment>
 
 <header>
+
     <isinclude template="/components/header/skipNav" />
+
+    <nav role="navigation">
+
+        <!-- Header Logo and system nav & Hamburger-->
+        <div class="header container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="navbar-header">
+
+                        <!-- Mobile Hamburger Element -->
+                        <div class="pull-left d-lg-none maf-element-hamburger">
+                            <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fa fa-bars"></i>
+                                <iscomment> <span class="hidden-xs-down">Menu</span> </iscomment>
+                            </button>
+                        </div>
+
+                        <!-- Logo Component -->
+                        <div class="navbar-header brand">
+                            <a class="logo-home" href="${URLUtils.url('Home-Show')}">
+                                <iscomment> <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" /> </iscomment>
+                                <img class="hidden-sm-down" src="https://blog.medicalert.org/wp-content/uploads/2021/05/medicalert-logo-600x97-1.png" alt="${Resource.msg('global.storename', 'common', null)}" />
+                                <iscomment> <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-small.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" /> </iscomment>
+                                <img class="d-md-none" src="https://blog.medicalert.org/wp-content/uploads/2021/07/medicaler-logo-white.png" alt="${Resource.msg('global.storename', 'common', null)}" />
+                            </a>
+                        </div>
+
+                        <!-- System Nav Component -->
+                        <div class="pull-right maf-component maf-component-system-navigation">
+                            <div class="search hidden-sm-down">
+                                <isinclude template="components/header/search" />
+                            </div>
+
+                            <div class="maf-component maf-component-donate hidden-sm-down">
+                                <a target="_blank" role="button" href="https://blog.medicalert.org/donate" class="btn btn-danger maf-element maf-element-donate-button"><i class="fa fa-heart" aria-hidden="true"></i> DONATE</a>
+                            </div>
+
+                            <div class="hidden-md-down">
+                                <isinclude url="${URLUtils.url('Account-Header')}" />
+                                <isinclude url="${URLUtils.url('Page-Locale')}" />
+                            </div>
+                            <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                                <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Maing Navigation Component -->
+        <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
+            <div class="container">
+                <div class="row">
+                    <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <!-- Top Promotional Banner Component -->
     <div class="header-banner slide-up d-none">
         <div class="container">
             <div class="justify-content-between">
@@ -18,58 +83,9 @@
         </div>
     </div>
 
-    <nav role="navigation">
+    <!-- Mobile Search Component -->
+    <div class="search-mobile d-md-none">
+        <isinclude template="components/header/search" />
+    </div>
 
-        <!-- Header Logo and system nav-->
-        <div class="header container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="navbar-header">
-
-                        <!-- Mobile Hamburger Element -->
-                        <div class="pull-left">
-                            <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                                &#9776;
-                                <iscomment> <span class="hidden-xs-down">Menu</span> </iscomment>
-                            </button>
-                        </div>
-
-                        <!-- Logo Component -->
-                        <div class="navbar-header brand">
-                            <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
-                                <iscomment> <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" /> </iscomment>
-                                <img class="hidden-sm-down" src="https://blog.medicalert.org/wp-content/uploads/2021/05/medicalert-logo-600x97-1.png" alt="${Resource.msg('global.storename', 'common', null)}" />
-                                <iscomment> <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-small.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" /> </iscomment>
-                                <img class="d-md-none" src="https://blog.medicalert.org/wp-content/uploads/2021/07/medicaler-logo-white.png" alt="${Resource.msg('global.storename', 'common', null)}" />
-                            </a>
-                        </div>
-
-                        <!-- System Nav Component -->
-                        <div class="pull-right">
-                            <div class="search hidden-sm-down">
-                                <isinclude template="components/header/search" />
-                            </div>
-                            <div class="hidden-md-down">
-                                <isinclude url="${URLUtils.url('Account-Header')}" />
-                                <isinclude url="${URLUtils.url('Page-Locale')}" />
-                            </div>
-                            <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
-                                <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
-            <div class="container">
-                <div class="row">
-                    <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
-                </div>
-            </div>
-        </div>
-        <div class="search-mobile d-md-none">
-            <isinclude template="components/header/search" />
-        </div>
-    </nav>
 </header>

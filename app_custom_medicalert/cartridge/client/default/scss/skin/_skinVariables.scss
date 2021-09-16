@@ -1,30 +1,35 @@
-@import "../variables";
+/*
+    @package MEDICALERTTHEMEPREMIUM
 
+*/
+
+@import "../variables";
 :root {
     /** ==================================================================== **/
-
     /** Create Custom CSS Variables from "sfra bootstrap override" variables **/
-
     /** ==================================================================== **/
-    --color-white: #{$white};
-    --color-black: #{$black};
-    --color-blue: #{$blue};
-    --color-green: #{$green};
-    --color-primary: #00a1e0;
-    --color-red: #{$red};
-    --color-success: var(--color-green);
+    --color-inherent: none; /* take background color */
+    --color-white: #ffffff; /* white */
+    --color-black: #051424; /* Rich Black Fogra */
+    --color-primary: #0A8558; /* Spanish Viridian */
+    --color-secondary: #1D3557; /* Prussian Blue */
+    --color-blue: #457796; /* Celadon Blue */
+    --color-blue-2: #AAC3D2; /* Beau Blue */
+    --color-light-blue: #F0F9F9; /* Mint Cream */
+    --color-orange: #D14900; /* Sinopia */
+    --color-green: #0A8558; /* Spanish Viridian */
+    --color-red: #D82A32; /* Rose Madder */
+    --color-success: var(--color-blue);
+    --color-amber: var(--color-orange);
     --color-danger: var(--color-red);
-    --color-light-blue: #{$light-blue};
-
-    // Consolidated values
-    --color-grey1: #{$grey1};
-    --color-grey2: #{$grey2};
-    --color-grey3: #{$grey3};
-    --color-grey4: #{$grey4};
-    --color-grey5: #{$grey5};
-    --color-grey6: #{$grey6};
-    --color-grey7: #{$grey7};
-    --color-grey8: #{$grey8};
+    --color-grey1: #fff;
+    --color-grey2: #eee;
+    --color-grey3: #F7F7F8; /* Cultured */
+    --color-grey4: #E5E7E8; /* Platinum */
+    --color-grey5: #CDD0D3; /* Light Gray */
+    --color-grey6: #6B737B; /* Sonic Silver */
+    --color-grey7: #37434F; /* Charcoal */
+    --color-grey8: #051424; /* Rich Black Fogra */
     --color-grey-transparent-1: rgba(0, 0, 0, 0.65);
     --color-grey-transparent-2: rgba(0, 0, 0, 0.25);
     --color-light-gray: var(--color-grey1);
@@ -38,13 +43,11 @@
     --color-close-menu-bg: var(--color-grey2);
     --color-link-color: var(--color-dark-gray);
     --color-hr-border-color: var(--color-grey3);
-
     /** ==================================================================== **/
-
     /** Define skin named variables here                                    **/
-
     /** ==================================================================== **/
-    --skin-background-color-1: var(--color-gray1);
+    --skin-background-color-1: var(--color-white);
+    --skin-btn-color-primary: var(--color-primary);
     --skin-border-color-1: var(--color-white);
     --skin-main-text-color-1: var(--color-gray7);
     --skin-main-text-color-2: var(--color-gray7);
@@ -64,6 +67,134 @@
     --skin-heading-color-1: var(--color-primary);
     --skin-heading-color-1-invert: var(--color-white);
     --skin-price-1: var(--color-gray7);
-    --skin-header-font: 'Dosis';
+    --skin-header-font: var(--font-family-sans-serif);
     --skin-body-font: var(--font-family-sans-serif);
-}
+    // Social
+    --skin-facebook-icon: #3b5998;
+    --skin-twitter-icon: #00acee;
+    --skin-email-icon: var(--color-black);
+    --skin-linkedin-icon: #0072b1;
+
+    /** ==================================================================== **/
+    /**                    MAF DESIGN SYSTEM SKIN                            **/
+    /** ==================================================================== **/
+    
+    // BUTTONS
+    --maf-e-button-light-dark: var(--color-primary);
+    --maf-e-button-light-light: var(--color-white);
+
+    //PRIMARY BUTTON
+    --maf-bootstrap-solid-primary: var(--color-primary);
+    --maf-bootstrap-outline-primary: var(--color-primary);
+    --maf-bootstrap-solid-primary-content: var(--color-white);
+    --maf-bootstrap-solid-primary-hover: darken($primary, 10%);
+
+    //SECONDARY BUTTON
+    --maf-bootstrap-solid-secondary: var(--color-secondary);
+    --maf-bootstrap-outline-secondary: var(--color-secondary);
+    --maf-bootstrap-solid-secondary-content: var(--color-white);
+    --maf-bootstrap-solid-secondary-hover: darken(--color-red, 10%);
+
+    //SUCCESS BUTTON
+    --maf-e-button-success-main: var(--color-green);
+    --maf-bootstrap-outline-success: var(--color-green);
+    --maf-bootstrap-solid-success-content: var(--color-white);
+    --maf-e-button-success-hover: darken(--color-red, 10%);
+
+    //DANGER BUTTON
+    --maf-e-button-danger-main: var(--color-red);
+    --maf-e-button-danger-content: var(--color-white);
+    --maf-e-button-danger-hover: var(--color-blue);
+
+    //WARNING BUTTON
+    --maf-e-button-warning-main: var(--color-amber);
+    --maf-e-button-warning-content: var(--color-white);
+    --maf-e-button-warning-hover: var(--color-blue);
+
+    // NAVIGATION
+    --maf-nav-bg-primary: var(--color-secondary);
+    --maf-nav-font-primary: var(--color-white);
+    --maf-mob-nav-primary: var(--color-primary);
+    --maf-mob-nav-submenu: var(--color-grey2);
+    --maf-mob-nav-primary-border: var(--color-grey4);
+    --maf-mob-nav-utility-background: var(--color-light-blue);
+    --maf-minicart-number: var(--color-danger);
+    --maf-progress-bar: var(--color-blue);
+
+    // BREADCRUMBS
+    --maf-breadcrumbs-current: var(--color-blue);
+
+    // PIPE LINKS
+    --maf-o-pipe_link-background: var(--color-inherent);
+    --maf-o-pipe_link-text: var(--color-black);
+    --maf-o-pipe_link-background-hover: var(--color-primary);
+    --maf-o-pipe_link-text-hover: var(--color-white);
+
+    //BLOGS
+    --maf-page_layout-detail-blog: var(--color-light-blue);
+
+    // FOOTER
+    --maf-o-footer-email_sign_up-background: var(--color-light-blue);
+    --maf-o-footer-email_sign_up-header: var(--color-red);
+    --maf-o-footer-back_to_top-link_arrow: var(--color-blue);
+    --maf-o-footer-back_to_top-link_arrow_hover: var(--color-primary);
+    --maf-o-footer-social-links: var(--color-blue);
+    --maf-o-footer-main_nav-background: var(--color-secondary);
+    --maf-o-footer-main_nav-text-title: var(--color-white);
+    --maf-o-footer-legal_nav-background: var(--color-light-blue);
+    --maf-o-footer-legal_nav-text: var(--color-white);
+    --maf-o-footer-copyright-background: var(--color-grey3);
+
+    //PAGINATION
+    --maf-c-pagination-background: var(--color-grey3);
+    --maf-c-pagination-background-hover: var(--color-blue-2);
+    --maf-c-pagination-current-background: var(--color-blue);
+    --maf-c-pagination-current-text: var(--color-white);
+
+    // FONT
+    --h1-layout-content: var(--font-family-serif);
+    --h1-layout-color: var(--color-secondary);
+
+    // PDP
+    --pdp-rating-product-bg: var(--color-light-blue);
+    --pdp-rating-product-border: var(--color-grey4);
+
+    // ======== CONTENT BLOCKS ========
+
+    // PULL QUOTE
+
+
+
+  }
+
+  :root {
+    --blue: #0070d2;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #c00;
+    --orange: #D14900;
+    --yellow: #ffc107;
+    --green: #00621c;
+    --teal: #030303;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #051424;
+    --primary: #1D3557;
+    --secondary: #487C9C;
+    --success: #0A8558;
+    --info: #17a2b8;
+    --warning: #C24E14;
+    --danger: #c00;
+    --light: #f8f9fa;
+    --dark: #051424;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1920px;
+    --font-family-sans-serif: 'Poppins', sans-serif;
+    --font-family-serif: 'Lora', serif;
+  }

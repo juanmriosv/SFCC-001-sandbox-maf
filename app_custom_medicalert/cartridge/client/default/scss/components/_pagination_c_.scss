@@ -1,0 +1,33 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+           PAGINATION COMPONENT
+    ==================================
+
+*/
+.maf-component-pagination{
+    text-align:center;
+    margin: 2em 0;
+}
+.maf-component-pagination ul{
+    list-style:none;
+    margin:0;
+}
+.maf-component-pagination ul > li{
+    list-style:none;
+    display: inline-block;
+}
+.maf-component-pagination ul > li a,
+.maf-component-pagination ul > li span{
+    padding: 0.5em 0.7em;
+    background: var(--maf-c-pagination-background);
+}
+.maf-component-pagination ul > li span.current{
+    background: var(--maf-c-pagination-current-background);
+    color: var(--maf-c-pagination-current-text);
+}
+.maf-component-pagination ul > li a:hover,
+.maf-component-pagination ul > li a:focus{
+    background: var(--maf-c-pagination-background-hover);
+    text-decoration: none;
+}

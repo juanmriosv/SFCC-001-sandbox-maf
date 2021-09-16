@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 
-$('body').on('updateAddToCartFormData', function (e, form) {
+$('body').on('updateAddToCartFormData2', function (e, form) {
 var maxPersLines = 20;
 var elementName = "#engravingline";
 

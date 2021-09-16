@@ -1,0 +1,10 @@
+<div class="row cart-and-ipay">
+    <div class="col-sm-12">
+        <button class="add-to-cart btn btn-primary btn-lg btn-block"
+                data-toggle="modal" data-target="#membershipModalPDP"
+                ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+            <span class="maf-number-circled">3</span>
+            ${Resource.msg('button.select.plans', 'memberships', null)}
+        </button>
+    </div>
+</div>

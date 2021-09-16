@@ -1,0 +1,21 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+            FONTS ELEMENTS SCSS
+    ==================================
+
+*/
+
+/* ======================== */
+/*        FONTS GENERAL     */
+/* ======================== */
+
+h1,h2,h3,a,p,span, dd, button, label, font{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.05em;
+    font-family: var(--skin-body-font);
+    color:#051424;
+    margin-top: 0;
+}

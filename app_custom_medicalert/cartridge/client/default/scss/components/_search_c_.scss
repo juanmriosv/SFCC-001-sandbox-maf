@@ -1,0 +1,65 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+           SEARCH COMPONENT SCSS
+    ==================================
+
+*/
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+
+/*
+    =======================
+        Search Component
+    =======================
+*/
+
+div.maf-c-site-search{
+    width: 100%;
+    margin: 2.5rem 0 0;
+}
+section.maf-organism .maf-c-site-search form input.search-field{
+    border-radius: 20px;
+}
+section.maf-organism .maf-c-site-search form .fa-search{
+    border-radius: 3px 20px 20px 3px;
+}
+
+
+/*
+    ====================
+        Search Header
+    ====================
+*/
+
+section.maf-organism-search-modal .modal-lg{
+    max-width: 100%;
+    margin: 0;
+}
+section.maf-organism-search-modal .modal-content{
+    padding: 1% 0;
+}
+section.maf-organism-search-modal .modal-header{
+    border: none;
+}
+
+@media (min-width: 768px) {
+    section.maf-organism .maf-c-site-search{
+        width: 55%;
+        max-width:635px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .site-search {
+        width: auto;
+        /* 320/16 */
+    }
+}

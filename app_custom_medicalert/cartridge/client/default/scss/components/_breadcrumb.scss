@@ -1,0 +1,19 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+        BREADCRUMBS COMPONENT SCSS
+    ==================================
+
+*/
+.maf-component-breadcrumbs{
+    font-size: 0.93em;
+}
+
+.maf-component-breadcrumbs .bread-current{
+    color: var(--maf-breadcrumbs-current);
+}
+// [START] SFCC
+.product-breadcrumb .breadcrumb{
+    border: none;
+}
+// [END] SFCC

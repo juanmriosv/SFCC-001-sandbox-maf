@@ -1,0 +1,51 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    =============================================
+        MOST RECENT HORIZONTAL COMPONENT SCSS
+    =============================================
+
+*/
+
+span.maf-element-excerpt-post-header{
+    position: absolute;
+    text-align: center;
+    top: -0.7em;
+    right: 0;
+    width: 100%;
+}
+span.maf-element-excerpt-post-header a{
+    color: #ffffff;
+    font-weight: bold;
+    font-weight: 600;
+    padding: 0 2em;
+    border: solid 1px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.maf-component-most-recent .maf-excerpt-wrapper{
+    border-top: solid 2px;
+}
+.maf-component-stories .maf-excerpt-wrapper{
+    border-color: #487c9c;
+}
+.maf-component-stories span.maf-element-excerpt-post-header a{
+    background: #487c9c;
+    border-color: #487c9c;
+}
+.maf-component-post .maf-excerpt-wrapper{
+    border-color: black;
+}
+.maf-component-post span.maf-element-excerpt-post-header a{
+    background: black;
+    border-color: black;
+}
+span.maf-element-excerpt-post-header a:hover{
+    background:#ffffff;
+    text-decoration:none;
+}
+.maf-component-stories span.maf-element-excerpt-post-header a:hover{
+    color: #487c9c;
+}
+.maf-component-post span.maf-element-excerpt-post-header a:hover{
+    color: black;
+}

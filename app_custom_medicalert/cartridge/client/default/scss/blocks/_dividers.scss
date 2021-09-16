@@ -1,0 +1,28 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ================================
+        BREAK HEADER ELEMENT SCSS
+    ================================
+*/
+
+.maf-component-break-title{
+    width: 90%;
+    margin: 0 auto 3em;
+}
+.maf-component-break-title .maf-line{
+    border-bottom: solid 1px gray;
+    display: block;
+}
+.maf-component-break-title h2{
+    position: absolute;
+    top: -0.6em;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-weight: bold;
+}
+.maf-component-break-title h2 span{
+    background: white;
+    padding: 0 3%;
+}

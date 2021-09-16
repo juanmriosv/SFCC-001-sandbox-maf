@@ -1,11 +1,139 @@
-<div class="col-12">
-Personalization
-<isloop items=${pdict.engraving} var="line" status="status">
+<div class="row maf-component maf-component-engraving maf-component-engraving-pdp">
+    <div class="engraving-fields col-12">
 
-<isset name="engravingValue" value="${pdict.engravingValues['engravingline'+(status.index + 1)]}" scope="page"/>
-<p class="col-12">
-Line <isprint value=${status.index + 1} style="INTEGER"/>: <input type="text" id="engravingline<isprint value=${status.index + 1} style="INTEGER"/>" maxlength="${line}" value="${engravingValue? engravingValue:''}" class="inputfield_en not_disabled">
-</p>
-</isloop>
+        <div class="attribute">
+            <h2>${Resource.msg('label.engraving.header', 'engraving', null)}</h2>
+            <form>
+            <isloop items=${pdict.engraving} var="line" status="status">
+                <isset name="engravingValue" value="${pdict.engravingValues['engravingline'+(status.index + 1)]}" scope="page"/>
+                <div>
+                    <label>${Resource.msg('label.engraving.fields', 'engraving', null)} <isprint value=${status.index + 1} style="INTEGER"/> </label>
+                    <input type="text" id="engravingline<isprint value=${status.index + 1} style="INTEGER"/>" maxlength="${line}" value="${engravingValue? engravingValue:''}" class="inputfield_en not_disabled">
+                    <span class="counter"  id="counter<isprint value=${status.index + 1} style="INTEGER"/>">${line}</span>
+                </div>
+            </isloop>
+            </form>
+        </div>
 
+        <div class="maf-modal-main maf-modal-main-engraving">
+
+            <button id="previewbtn" type="button" class="btn btn-link" data-toggle="modal" data-target="#previewModal">
+                ${Resource.msg('label.engraving.preview', 'engraving', null)}
+            </button>
+
+            <div id="previewModal" class="modal fade maf-component-engraving" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel"
+                aria-hidden="true" style="display: none;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="gridModalLabel">${Resource.msg('label.engraving.preview', 'engraving', null)}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true"><i class="fa fa-times"></i></span></button>
+                        </div>
+
+                        <div class="maf-modal-body modal-body-engraving">
+
+                            <div class="engraving-preview">
+                                <div class="engraving-wrap">
+                                    <div>
+                                        <p>${Resource.msg('preview.engraving.placeholdertop', 'engraving', null)}</p>
+                                        <div id="engravingwrap"><p id="maf-engraving-placeholder">${Resource.msg('preview.engraving.placeholdercenter', 'engraving', null)}</p></div>
+                                        <p>${Resource.msg('preview.engraving.placeholderbottom', 'engraving', null)}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
 </div>
+
+
+
+<script>
+maf_engraving();
+
+function maf_engraving(){
+
+    window.onload = function () {
+        var numbersOfLines = ${pdict.engraving};
+        var n =numbersOfLines.length;
+
+        for( i=1 ; i <= numbersOfLines.length ; i++){
+            inputID = "engravingline" + i;
+            counterID = "counter" + i;
+            printID = "engraving_line_print" + i;
+            var el = document.createElement("div");
+            var div = document.getElementById("engravingwrap");
+            inputField = document.getElementById(inputID);
+
+            insertAfter(div, el);
+            el.setAttribute("ID",printID);
+
+            char_limit = document.getElementById(inputID).getAttribute('maxlength');
+
+
+            previewEngraving(inputID,printID);
+            charaterLimit(inputField,counterID,char_limit);
+        }
+    }
+}
+
+function previewEngraving(inputID,printID){
+        var inputBox = document.getElementById(inputID);
+
+        inputBox.onkeyup = function(){
+            var inputBox = document.getElementById(inputID);
+            inputBox.onkeyup = function(){
+                document.getElementById(printID).innerHTML = inputBox.value;
+                $('#maf-engraving-placeholder').hide();
+            }
+        }
+}
+
+function insertAfter(referenceNode, newNode) {
+  referenceNode.appendChild(newNode, referenceNode.nextSibling);
+}
+
+
+function charaterLimit(inputField,counterID,char_limit) {
+
+inputField.addEventListener('input', function () {
+
+  var value = inputField.value;
+  var count = value.length;
+  var difference = char_limit-count;
+  var counter = document.getElementById(counterID);
+
+    // character limit reached (gray)
+    if(!((difference) > 0)){
+        counter.innerHTML = '0' ;
+        counter.style.background="#818991";
+        counter.style.color="#ffffff";
+
+    }else if(((difference) > 0)){
+        console.log(difference);
+        if(difference == "1"){
+            counter.innerHTML = '1';
+            counter.style.background="#D14900";
+            counter.style.color="#ffffff";
+        }else{
+            counter.innerHTML = difference;
+            counter.style.background="#0A8558";
+            counter.style.color="#ffffff";
+        };
+    }else{
+        counter.innerHTML  = difference;
+    }
+
+}, false);
+
+}
+</script>

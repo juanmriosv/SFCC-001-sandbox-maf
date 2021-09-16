@@ -1,0 +1,28 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+        TOP GLOBAL BANNER COMPONENT
+    ==================================
+
+*/
+.header-banner {
+    background-color: #222;
+    text-align: center;
+    color: #fff;
+}
+.maf-global-banner p{
+    margin:0;
+}
+.header-banner .close-button {
+    width: 2.125em;
+}
+.header-banner .close-button .close {
+    opacity: 1;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+.header-banner .close-button .close span{
+    color: inherit;
+}

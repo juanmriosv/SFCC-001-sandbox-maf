@@ -5,7 +5,7 @@
 <div class="container maf-element maf-element-h1">
     <div class="row">
         <h1 class="col header page-title">
-            Medical ID ${pdict.productSearch.category.name}
+            ${Resource.msg('h1.plp', 'search', null)} ${pdict.productSearch.category.name}
         </h1>
     </div>
 </div>
@@ -23,7 +23,7 @@
 </div>
 
 
-<div class="container search-results">
+<div class="maf-page-layout container search-results">
     <div class="row search-nav">
         <isif condition="${!pdict.productSearch.isCategorySearch}">
             <div class="nav-tabs-wrapper">

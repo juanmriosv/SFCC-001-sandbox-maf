@@ -1,0 +1,18 @@
+<isset name="product" value="${typeof product === 'undefined' || empty(product) ? pdict.product : product}" scope="page" />
+
+<isloop items="${product.options}" var="option" status="loopStatus">
+    <div class="row product-option" data-option-id="${option.id}">
+        <div class="attribute col-12">
+            <isinclude template="product/components/option" />
+        </div>
+    </div>
+</isloop>
+
+    <div class="maf-modal-main maf-modal-main-membership">
+
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#membershipModalPDP">
+            ${Resource.msg('link.memberships.options', 'memberships', null)}
+        </button>
+        <isinclude template="components/maf_blocks/plansModalPDP" />
+
+    </div>

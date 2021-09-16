@@ -12,28 +12,15 @@
     <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
     <isobject object="${product.raw}" view="detail">
         <div class="container product-detail product-wrapper" data-pid="${product.id}">
-            <div class="row">
-                <div class="col-12">
-                    <!--Breadcrumbs-->
-                    <div class="product-breadcrumb d-md-none">
-                        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
-                    </div>
-
-                    <!-- Product Name -->
-                    <div class="row">
-                        <div class="d-md-none col-sm-12">
-                            <h1 class="product-name">${product.productName}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="row">
+
                 <!-- Product Images Carousel -->
                 <isinclude template="product/components/imageCarousel" />
 
                 <div class="col-12 col-sm-6">
-                    <!--Breadcrumbs-->
+
+                    <!--Breadcrumbs Desktop Only-->
                     <div class="row">
                         <div class="product-breadcrumb col hidden-sm-down">
                             <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
@@ -43,66 +30,135 @@
                     <!-- Product Name -->
                     <div class="row">
                         <div class="col">
-                            <h1 class="product-name hidden-sm-down">${product.productName}</h1>
+                            <h1 class="product-name">${product.productName}</h1>
                         </div>
                     </div>
 
-
+                    <!--Breadcrumbs Mobile Only-->
                     <div class="row">
-                        <div class="col">
-                            <isinclude template="product/components/pidRating" />
+                        <div class="product-breadcrumb col d-md-none">
+                            <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
                         </div>
                     </div>
+
+
+
 
                     <div class="attributes">
-                        <!-- Attributes and Quantity -->
-                        <isinclude template="product/components/mainAttributes" />
 
-                        <isset name="isBundle" value="${false}" scope="page" />
-                        <isset name="loopState" value="${{count: 1}}" scope="page" />
-                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
-                            <div class="row" data-attr="${attr.id}">
-                                <div class="col-8">
-                                    <isinclude template="product/components/variationAttribute" />
+                    <iscomment> [STARTS]TAB COMPONENT </iscomment>
+                    <div class="maf-component maf-component-tabs">
+
+                        <ul class="nav nav-tabs flex-row" id="myTab" role="tablist">
+                            <li class="flex-fill text-center">
+                                <a class="nav-link active" id="maf-c-tab-1" data-toggle="tab" href="#maf_tab_1" role="tab" aria-controls="STEP 1" aria-selected="true">
+                                    <span class="maf-number-circled">1</span> CHOOSE
+                                </a>
+                            </li>
+                            <li class="flex-fill text-center">
+                                <a class="nav-link" id="maf-c-tab-2" data-toggle="tab" href="#maf_tab_2" role="tab" aria-controls="STEP 2" aria-selected="false">
+                                <span class="maf-number-circled">2</span> PERSONALIZE</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="myTabContent">
+
+                            <iscomment> [START] PANEL 1 </iscomment>
+                            <div class="tab-pane fade show active" id="maf_tab_1" role="tabpanel" aria-labelledby="maf-c-tab-1">
+
+
+                                <!-- Product Price -->
+                                <div class="prices-add-to-cart-actions">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- Prices -->
+                                            <div class="prices">
+                                                <isset name="price" value="${product.price}" scope="page" />
+                                                <isinclude template="product/components/pricing/main" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <isif condition="${attributeStatus.last && !isBundle}">
-                                    <!-- Quantity Drop Down Menu -->
-                                    <div class="attribute quantity col-4">
-                                        <isinclude template="product/components/quantity" />
+
+                                <!-- Attributes and Quantity -->
+                                <isinclude template="product/components/mainAttributes" />
+
+                                <isset name="isBundle" value="${false}" scope="page" />
+                                <isset name="loopState" value="${{count: 1}}" scope="page" />
+
+                                <div class="row">
+                                <div class="col-6">
+                                <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                                    <div class="row" data-attr="${attr.id}">
+                                        <div class="col-12">
+                                            <isinclude template="product/components/variationAttribute" />
+                                        </div>
+
+                                        <isif condition="${attributeStatus.last && !isBundle}">
+                                            <!-- Quantity Drop Down Menu -->
+                                            <div class="quantity">
+                                                <div class="attribute">
+                                                    <isinclude template="product/components/quantity" />
+                                                </div>
+                                            </div>
+                                        </isif>
+
+                                    </div>
+                                </isloop>
+
+                                <!-- Size Chart -->
+                                <isif condition="${product.variationAttributes && product.sizeChartId}">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <isinclude template="product/components/sizeChart" />
+                                        </div>
                                     </div>
                                 </isif>
-                            </div>
-                        </isloop>
 
-                        <isif condition="${!product.variationAttributes}">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="simple-quantity">
-                                        <isinclude template="product/components/quantity" />
+
+                                <isif condition="${!product.variationAttributes}">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="simple-quantity">
+                                                <isinclude template="product/components/quantity" />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </isif>
+                                </isif>
 
-                        <div class="product-options">
-                            <isif condition="${product.options && product.options.length > 0}">
-                                <isinclude template="product/components/options" />
-                            </isif>
+                                </div>
+
+                                <div class="col-6 maf-component-pdp_membership">
+                                <isif condition="${product.options && product.options.length > 0}">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <isinclude template="product/components/options" />
+                                        </div>
+                                    </div>
+                                </isif>
+                                </div>
+                                </div>
+
+                            </div>
+                            <iscomment> [END] PANEL 1 </iscomment>
+
+
+                            <iscomment> [START] PANEL 2 </iscomment>
+                            <div class="tab-pane fade" id="maf_tab_2" role="tabpanel" aria-labelledby="maf-c-tab-2">
+
+                                <!-- Personalization: Engraving Tool -->
+                                <isinclude template="product/components/engraving/engravingPdp" />
+
+                            </div>
+                            <iscomment> [END] PANEL 2 </iscomment>
+
                         </div>
 
-                        <!-- Size Chart -->
-                        <isif condition="${product.variationAttributes && product.sizeChartId}">
-                            <div class="row">
-                                <div class="size-chart col-12">
-                                    <isinclude template="product/components/sizeChart" />
-                                </div>
-                            </div>
-                        </isif>
-                            <!-- Personalization -->
-                            <div class="row">
-                            <isinclude template="product/components/engraving/engravingPdp" />
-                            </div>
+                    </div>
+                    <iscomment> [ENDS] TAB COMPONENT </iscomment>
+
+
                         <!-- Product Availability -->
                         <isinclude template="product/components/productAvailability" />
 
@@ -113,49 +169,254 @@
                             </div>
                         </div>
 
-                        <div class="prices-add-to-cart-actions">
+                        <iscomment> <div class="prices-add-to-cart-actions">
                             <div class="row">
                                 <div class="col-12">
                                     <!-- Prices -->
                                     <div class="prices">
                                         <isset name="price" value="${product.price}" scope="page" />
-                                        <isinclude template="product/components/pricing/main" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> </iscomment>
 
-                        <div class="prices-add-to-cart-actions">
-                            <div class="row">
-                                <div class="col-12">
-                                    <!-- Prices -->
-                                    <div class="prices">
-                                        <isset name="price" value="${product.price}" scope="page" />
-                                    </div>
-                                </div>
-                            </div>
-                 
+                            <!-- Select Plan -->
+                            <isinclude template="product/components/selectPlanProduct" />
+
                             <!-- Cart and [Optionally] Apple Pay -->
+                            <iscomment> <div hidden>
                             <isinclude template="product/components/addToCartProduct" />
+                            </div> </iscomment>
+
                         </div>
 
                         <!-- Social Sharing Icons -->
                         <div class="row">
                             <isinclude template="product/components/socialIcons" />
                         </div>
+
                     </div>
                 </div>
+
             </div>
 
             <div>
                 <isslot id="cts-recommendations-m" description="Complete the set products" context="global" context-object="${pdict.product.raw}" />
             </div>
 
-            <isset name="loopState" value="${{count: 1}}" scope="page" />
-            <isinclude template="product/components/descriptionAndDetails" />
 
-            <div class="recommendations">
-                <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
+
+            <div class="container maf-organism-pdp-more-details">
+            <div class="row">
+            <div class="col">
+
+                <!-- Product Number and Product Ratings -->
+
+                <isinclude template="product/components/pidRating" />
+
+
+                <isset name="loopState" value="${{count: 1}}" scope="page" />
+                <isinclude template="product/components/descriptionAndDetails" />
+
+
+                <iscomment> SIZE CHART </iscomment>
+                <div class="row details collapsible-xs" id="maf_size_chart">
+                        <div class="col-sm-12 col-md-4 col-lg-3">
+                            <button class="title btn text-left btn-block d-sm-none" aria-expanded="false" aria-controls="collapsible-details-1">
+                                Size Chart
+                            </button>
+                            <h2 class="title d-none d-sm-block">
+                                Size Chart
+                            </h2>
+                        </div>
+
+                        <!-- dwMarker="linclude" dwTemplateTitle="/default/product/components/details.isml (app_storefront_base)" dwTemplateURL="http://localhost:60606/target=/app_storefront_base/cartridge/templates/default/product/components/details.isml" -->
+
+                    <div class="col-sm-12 col-md-8 col-lg-9 value content" id="collapsible-details-1">
+
+
+<div class="tips">
+                    <p>Whether you're ordering a bracelet, watch, or sports band, it's important your MedicAlert® emblem
+                        fits comfortably around your wrist. Please use this information to select your correct bracelet
+                        size. If you're ordering a necklace, dog tag, or other MedicAlert product, look at the item's
+                        "product specifications" for sizing information.</p>
+                    <p>To determine your size, snugly wrap a tape measure around your wrist. Note the measurement, then
+                        add half an inch. This is the size MedicAlert bracelet you'll need.</p>
+                    <div style="float:left;width:50%; margin:0 auto;"><img style="max-width: 100%; height: auto;"
+                            alt="Sizing"
+                            src="http://www.medicalert.org/sites/default/files/kim%20measure%20bright%20700.jpg"></div>
+                </div>
+
+                <div style="float;width:100%;margin:0 auto;" class="sizinginformation">
+                    <div class="sizechart" role="tabpanel" aria-labelledby="bracelets-tab" id="bracelets">
+                        <table class="sizecharttable table table-striped" summary="Bracelets">
+                            <tbody>
+                                <tr>
+                                    <th scope="col">Wrist Measurement</th>
+                                    <th scope="col">Size Needed for MedicAlert Bracelets </th>
+                                </tr>
+                                <tr>
+                                    <td>5 inches</td>
+                                    <td>5.5 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>5.5 inches</td>
+                                    <td>6 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>6 inches</td>
+                                    <td>6.5 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>6.5 inches</td>
+                                    <td>7 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>7 inches</td>
+                                    <td>7.5 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>7.5 inches</td>
+                                    <td>8 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>8 inches</td>
+                                    <td>8.5 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>8.5 inches</td>
+                                    <td>9 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>9 inches</td>
+                                    <td>9.5 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>9.5 inches</td>
+                                    <td>10 inches</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="float:left;clear:both;padding-bottom:2%;"><em>For example: If your wrist measures 7 inches
+                        around, you'll need to order a 7.5 inch bracelet.</em></div>
+
+                <div style="float:left;clear:both;">
+                    <p>Most of our metal chains are customizable in half inch increments. Sizes range from 5 to 10
+                        inches. Stretch bands, sports bands, watches, and beaded bracelets come in set sizes. You may
+                        view their available sizes under the item's "product specifications".</p>
+                    <p>You can select the size of your product once it is added to your cart. <a
+                            href="http://www.medicalert.org/product/catalog/medical-ids">Shop MedicAlert IDs</a></p>
+                </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+                <iscomment> END SIZE CHART </iscomment>
+
+
+
+                <div class="recommendations">
+                    <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
+                </div>
+
+
             </div>
+            </div>
+            </div>
+
         </div>
     </isobject>
 </isdecorate>
+
+<style>
+.maf-component-tabs .attribute{
+    margin:0;
+}
+.non-input-label,
+label.size,
+.attribute label{
+    margin: 0 0 0.2em;
+}
+.maf-number-circled {
+   background: var(--color-success);
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: var(--color-white);
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.6em;
+}
+h1.product-name{
+    font-size: 1.75em;
+}
+.maf-component-tabs .nav-tabs{
+    font-weight: bold;
+    font-weight: 600;
+    border-top: 1px solid #1D3557;
+}
+#maincontent .maf-component-tabs .nav-tabs li a.active{
+    background:#F0F9F9;
+}
+#maincontent .maf-component-tabs .nav-tabs li a:hover{
+
+}
+.prices-add-to-cart-actions > .row > .col-12{
+    padding: 0;
+}
+.prices-add-to-cart-actions .prices {
+    padding: 0;
+    margin: 1em 0;
+}
+.prices-add-to-cart-actions .prices .price{
+    text-align: left;
+    font-size: 1.83em;
+    /* margin: 0.3em 0 0; */
+}
+#maincontent button.add-to-cart{
+    border-radius: 0;
+    margin: 1.5em 0em 0;
+}
+.maf-component-pdp_membership{
+    align-self: flex-end;
+}
+.availability-msg,
+.product-detail .attributes>div.availability{
+    margin:0;
+}
+.maf-organism-pdp-more-details h2{
+    font-weight:bold;
+    font-weight:600;
+}
+.product-availability > div{
+    padding: 0;
+    align-self: flex-end;
+}
+.product-availability > div span{
+    margin: 0;
+}
+.cart-and-ipay > div{
+    padding:0;
+}
+.cart-and-ipay > div button{
+    margin-left:0;
+    margin-right:0;
+}
+div[data-attr="color"] > div.col-12{
+    margin: 0 0 1em;
+}
+.nav-tabs .nav-link{
+    font-size: 1em;
+}
+.maf-component-engraving-pdp{
+    margin: 2em 0;
+}
+</style>

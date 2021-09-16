@@ -1,4 +1,5 @@
 <isslot id="maf-plp-banner-m" description="Banner for Category Listing Page" context="global" />
+<iscomment> <isslot id="maf-plp-banner-m" context="category" description="Category Heading Banner" context-object="${pdict.ProductSearchResult.category}" /> </iscomment>
 
 <!-- MAF MEMBERS PLANS MODAL -->
 <isinclude template="components/maf_blocks/plansModalDefault" />

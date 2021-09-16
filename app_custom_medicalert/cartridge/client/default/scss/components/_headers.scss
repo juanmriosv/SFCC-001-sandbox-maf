@@ -1,0 +1,64 @@
+@import "../skin/skinVariables";
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--skin-body-font);
+}
+h1{
+    font-family: var(--h1-layout-content);
+    color:var(--h1-layout-color);
+}
+h1,
+h1.page-title,
+h1.archive-title,
+h1.product-name{
+    font-size: 1.63em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-weight: 600;
+    margin: 0;
+}
+h1.product-name{
+    font-size: 2.63em;
+    margin: 0 0 0.6em;
+}
+div.maf-element-h1{
+    max-width: 1920px;
+    padding: 0 15px;
+}
+div.maf-element-h1 > div{
+    margin: 0;
+}
+h1.header.page-title{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-weight: 600;
+    margin: 0;
+    background: none;
+    color: black;
+    padding: 0;
+    left:0;
+}
+h1.header.page-title:before{
+    width: 0;
+    left: 0;
+}
+div.maf-element-h1{
+    padding: 1em 15px;
+}
+h1.product-name{
+    margin: 0 0 0.5em;
+    font-size: 2.3em;
+}
+
+@media (min-width: 768px) {
+    h1.page-title{
+        font-size: 1.63em;
+    }
+    div.maf-element-h1{
+        padding: 1em 2em;
+    }
+}

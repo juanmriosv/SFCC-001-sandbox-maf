@@ -1,6 +1,6 @@
 <iscomment> juanma 08.19.21 </iscomment>
 
-<header>
+<header class="maf-component maf-component-header-no-navigation">
     <isinclude template="/components/header/skipNav" />
     <div class="header-banner slide-up d-none">
         <div class="container">

@@ -1,0 +1,66 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ===================================
+        PAGE LAYOUT DEFAULT LP SCSS
+    ===================================
+
+*/
+
+/*
+====================================
+    GUTTENBERG BLOCKS OVERWRITE
+====================================
+*/
+
+div.maf-page-layout-content .wp-block-columns,
+div.maf-page-layout-content .wp-block-cover{
+    margin: 0 auto 3%;
+}
+// [START] PULL QUOTE
+.wp-block-pullquote{
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    padding: 2% 3%;
+    font-style: italic;
+    background: #F8F7F8;
+}
+.wp-block-pullquote p{
+    color: #457796;
+    font-weight:bold;
+    font-weight:600;
+}
+.wp-block-pullquote cite{
+    color: #457796;
+}
+.wp-block-pullquote.is-style-solid-color{
+    border:initial;
+}
+// [END] PULL QUOTE
+
+/*
+============================
+    GENERAL CONTENT MAF
+============================
+*/
+div.maf-organism-main-body div.maf-page-layout-content{
+    width: 100%;
+    max-width:1920px;
+    margin: 0 auto 3em;
+}
+// div.maf-page-content{
+//     width: 94%;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+.maf-content-component{
+    position:relative;
+    margin: 0 0 3%;
+}
+.maf-page-content h2{
+    font-size:1.5em;
+    margin: 0 auto 1em;
+}
+.maf-page-layout-content .maf-page-content{
+    width: 100%;
+    margin: 0 auto;
+}

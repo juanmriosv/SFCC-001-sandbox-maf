@@ -1,92 +1,3 @@
-<style>
-.maf-modal-memberships > div.modal-dialog{
-    max-width:920px;
-}
-.maf-modal-memberships .modal-body-membership > .row{
-    width: 100%;
-    margin: 0 auto;
-    margin-left: 1.5%;
-}
-.maf-modal-memberships .modal-body-membership{
-    padding: 2em 1em 3em;
-}
-
-.maf-modal-memberships section{
-    position: relative;
-    border: solid 1px;
-    border-radius: 30px;
-    padding: 12%;
-    margin: 1em 0;
-}
-.maf-modal-memberships section label{
-    position: absolute;
-    top: -1px;
-    width: 100%;
-    left: 0;
-    background: #F8F7F5;
-    color: white;
-    border-radius: 30px 30px 0 0;
-    padding: 0.05em 0;
-    font-weight: bold;
-    font-weight: 600;
-}
-.maf-modal-memberships section.maf-plan-advantage label{
-    background: #1D3557;
-    padding: 0.2em 0;
-}
-.maf-modal-memberships ul{
-    list-style: disc;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-    min-height: 230px;
-}
-.maf-modal-memberships section.maf-plan-advantage{
-    padding: 19% 12% 12%;
-}
-.maf-modal-memberships ul li:first-of-type,
-.maf-modal-memberships p{
-    text-align: center;
-    list-style: none;
-    font-weight: bold;
-    font-weight: 600;
-}
-.maf-modal-memberships ul li:first-of-type{
-    margin: 0 0 1em;
-}
-.maf-modal-memberships p{
-    margin: 1em 0 0;
-    font-weight:bold;
-    font-weight:600;
-}
-.maf-modal-memberships .btn-blue{
-    background: #457796;
-    color: #ffffff;
-    padding: 0.375rem 1.75rem
-}
-
-@media (min-width: 768px) {
-    .maf-modal-memberships section.maf-plan-advantage{
-        height: 100%;
-        padding: 19% 12% 12%;
-        margin: 0;
-    }
-    .maf-modal-memberships .modal-body-membership .row > div:nth-of-type(1){
-        padding-right: 0;
-    }
-    .maf-modal-memberships .modal-body-membership .row > div:nth-of-type(2){
-        padding: 0;
-        margin: 0 -1% 0 -1%;
-        z-index: 2;
-        background: white;
-    }
-    .maf-modal-memberships .modal-body-membership .row > div:nth-of-type(3){
-        padding-left: 0;
-    }
-
-}
-</style>
-
 <div id="membershipModalDefault" class="modal fade maf-modal-memberships" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -102,44 +13,43 @@
 		    <div class="row">
 		    	<div class="col-md-4">
 					<section class="maf-plan maf-plan-basic">
-					  <h3><a href="" id="btnBasic">Basic</a></h3>
-					  <ul>
-					    <li>Easy Access to Vac +</li>
-					    <li>24/7 Emergency Response Team</li>
-					    <li>Personal Profile</li>
-					    <li>Portrait Photo (selfie)</li>
-					    <li>Printable Patient Profile</li>
-					    <li>Emergency Health Profile</li>
-					  </ul>
+					  <h3><a href="https://blog.medicalert.org/memberships" id="btnBasic">Basic</a></h3>
                       <p>$24.99 /year</p>
+					  <ul>
+					    <li>My Vaccination Records +</li>
+					    <li>24/7 Medical Information Response Team</li>
+					    <li>Secure Self-Reported Health Record</li>
+					  </ul>
 					</section>
 				</div>
 
 		    	<div class="col-md-4">
 					<section class="maf-plan maf-plan-advantage">
-                    <label>Most Popular</label>
-                        <h3><a href="" id="btnBasic">Advantage</a></h3>
+                    <label class="most-popular-label">Most Popular</label>
+                        <h3><a href="https://blog.medicalert.org/memberships" id="btnBasic">Advantage2</a></h3>
+						<p>$49.99 /year</p>
                         <ul>
                             <li>Basic +</li>
-                            <li>24/7 Wandering Support</li>
                             <li>Emergency Contact Notification</li>
+                            <li>Missing Persons Search Coordination</li>
                         </ul>
-                        <p>$49.99 /year</p>
                         <div class="maf-button">
-                            <button type="button" class="btn btn-blue">Learn More</button>
+                            <a href="https://blog.medicalert.org/memberships" type="button" class="btn btn-content btn-info">Learn More</a>
                         </div>
 					</section>
 				</div>
 
 		    	<div class="col-md-4">
 					<section class="maf-plan maf-plan-advantage-plus">
-                        <h3><a href="" id="btnBasic">Advantage Plus</a></h3>
+                        <h3><a href="https://blog.medicalert.org/memberships" id="btnBasic">Advantage Plus</a></h3>
+                        <p>$74.99 /year</p>
                         <ul>
                             <li>Advantage +</li>
+                            <li>HIPAA Complient Document Storage</li>
                             <li>Physician Notification</li>
-                            <li>Advance Directive/DNR</li>
+							<li>Advance Directive Delivery</li>
+							<li>Do Not Resuscitate Announcement (DNR)</li>
                         </ul>
-                        <p>$74.99 /year</p>
 					</section>
 				</div>
 

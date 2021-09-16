@@ -1,0 +1,97 @@
+<div class="maf-modal-main maf-modal-main-sizechart">
+
+    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#sizeChartModal">
+        Size&nbsp;Chart
+    </button>
+
+    <div id="sizeChartModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel"
+        aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gridModalLabel">Size Chart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+                <div class="maf-modal-body modal-body-sizechart">
+
+                    <div class="tips">
+                        <p>Whether you're ordering a bracelet, watch, or sports band, it's important your MedicAlert® emblem
+                            fits comfortably around your wrist. Please use this information to select your correct bracelet
+                            size. If you're ordering a necklace, dog tag, or other MedicAlert product, look at the item's
+                            "product specifications" for sizing information.</p>
+                        <p>To determine your size, snugly wrap a tape measure around your wrist. Note the measurement, then
+                            add half an inch. This is the size MedicAlert bracelet you'll need.</p>
+                        <div style="float:left;width:50%; margin:0 auto;"><img style="max-width: 100%; height: auto;"
+                                alt="Sizing"
+                                src="http://www.medicalert.org/sites/default/files/kim%20measure%20bright%20700.jpg"></div>
+                    </div>
+
+                    <div style="float;width:100%;margin:0 auto;" class="sizinginformation">
+                        <div class="sizechart" role="tabpanel" aria-labelledby="bracelets-tab" id="bracelets">
+                            <table class="sizecharttable table table-striped" summary="Bracelets">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Wrist Measurement</th>
+                                        <th scope="col">Size Needed for MedicAlert Bracelets </th>
+                                    </tr>
+                                    <tr>
+                                        <td>5 inches</td>
+                                        <td>5.5 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5.5 inches</td>
+                                        <td>6 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6 inches</td>
+                                        <td>6.5 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6.5 inches</td>
+                                        <td>7 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7 inches</td>
+                                        <td>7.5 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7.5 inches</td>
+                                        <td>8 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8 inches</td>
+                                        <td>8.5 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8.5 inches</td>
+                                        <td>9 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9 inches</td>
+                                        <td>9.5 inches</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9.5 inches</td>
+                                        <td>10 inches</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="float:left;clear:both;padding-bottom:2%;"><em>For example: If your wrist measures 7 inches
+                            around, you'll need to order a 7.5 inch bracelet.</em></div>
+
+                    <div style="float:left;clear:both;">
+                        <p>Most of our metal chains are customizable in half inch increments. Sizes range from 5 to 10
+                            inches. Stretch bands, sports bands, watches, and beaded bracelets come in set sizes. You may
+                            view their available sizes under the item's "product specifications".</p>
+                        <p>You can select the size of your product once it is added to your cart. <a
+                                href="http://www.medicalert.org/product/catalog/medical-ids">Shop MedicAlert IDs</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

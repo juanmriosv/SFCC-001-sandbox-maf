@@ -1,0 +1,23 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ===============================
+        CONDITION LAYOUTS SCSS
+    ===============================
+*/
+
+
+/*
+====================================
+    GUTTENBERG BLOCKS OVERWRITE
+====================================
+*/
+
+.maf-page-layout-content-condition .wp-block-columns{
+    width: 94%;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+.maf-page-layout-content-condition .maf-content-component-half-hero{
+    margin:0;
+}

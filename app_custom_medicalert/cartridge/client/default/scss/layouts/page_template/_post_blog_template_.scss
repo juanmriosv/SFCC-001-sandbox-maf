@@ -1,0 +1,31 @@
+/*
+    @package MEDICALERTTHEMEPREMIUM
+    ==================================
+            BUTTON ELEMENTS SCSS
+    ==================================
+
+*/
+.maf-page-layout-detail-blog .maf-post-sidebar{
+    background: var(--maf-page_layout-detail-blog);
+    border-radius: 0 0 20px 20px;
+    padding: 10%;
+}
+/*
+================
+    SIDEBAR
+================
+*/
+
+// Share Social Icons
+div.maf-page-layout-detail-blog .maf-component-social_icons_share a#icon-share-facebook{
+    color: var(--skin-facebook-icon) !important;
+}
+div.maf-page-layout-detail-blog .maf-component-social_icons_share a#icon-share-twitter{
+    color: var(--skin-twitter-icon) !important;
+}
+div.maf-page-layout-detail-blog .maf-component-social_icons_share a#icon-share-email{
+    color: var(--skin-email-icon) !important;
+}
+div.maf-page-layout-detail-blog .maf-component-social_icons_share a#icon-share-linkedin{
+    color: var(--skin-linkedin-icon) !important;
+}

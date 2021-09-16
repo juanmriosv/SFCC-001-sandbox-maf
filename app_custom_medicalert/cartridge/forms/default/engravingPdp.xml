@@ -2,16 +2,16 @@
 
 <form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
 	<group formid="engravingline1">
-		<field 
-			formid="engravingline1" 
-			label="label.input.engravingline1.engraving" 
-			mandatory="true" 
+		<field
+			formid="engravingline1"
+			label="label.input.engravingline1.engraving"
+			mandatory="true"
 			max-length="50"
-			missing-error="error.message.required" 
-			range-error="error.message.50orless" 
+			missing-error="error.message.required"
+			range-error="error.message.50orless"
 			type="string" />
 
-		<field 
+		<field
 			formid="engravingline2" 
 			label="label.input.engravingline2.engraving" 
 			mandatory="true" 
@@ -45,17 +45,14 @@
 			value-error="ValueErrorText"
 			type="string"/> 
 			<!-- TODO value-error not comming back from the platform -->
-			
-		<field 
+
+		<field
 			formid="engravingline5"
 			label="label.input.engravingline5.engraving"
 			mandatory="true"
 			regexp="^\(?([2-9][0-8][0-9])\)?[\-\. ]?([2-9][0-9]{2})[\-\. ]?([0-9]{4})(\s*x[0-9]+)?$"
 			missing-error="error.message.required"
 			parse-error="error.message.parse.phone.engraving.form"
-			type="string"/> 
-
-
+			type="string"/>
 	</group>
 </form>
-

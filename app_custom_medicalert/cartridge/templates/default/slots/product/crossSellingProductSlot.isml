@@ -1,0 +1,14 @@
+<isinclude template="/components/modules" />
+
+<h2>You May Also Like</h2>
+
+<div class="maf-component maf-component-crosselling-recommender row">
+
+    <isloop items="${slotcontent.content}" var="product" status="loopState">
+
+        <div class="col-6 col-sm-3">
+            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', false, 'swatches', true)}"/>
+        </div>
+
+    </isloop>
+</div>
