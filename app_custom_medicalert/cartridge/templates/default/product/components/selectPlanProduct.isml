@@ -1,9 +1,8 @@
-<div class="row cart-and-ipay">
+<div class="row maf-element-button-select-plan">
     <div class="col-sm-12">
-        <button class="add-to-cart btn btn-primary btn-lg btn-block"
-                data-toggle="modal" data-target="#membershipModalPDP"
-                ${!product.readyToOrder || !product.available ? "disabled" : ""}>
-            <span class="maf-number-circled">3</span>
+        <button id="maf_membership_menu" class="btn btn-info btn-lg btn-block"
+                data-toggle="modal" data-target="#membershipModalPDP">
+            <span class="maf-number-circled maf-number-circled-selectplan">3</span>
             ${Resource.msg('button.select.plans', 'memberships', null)}
         </button>
     </div>

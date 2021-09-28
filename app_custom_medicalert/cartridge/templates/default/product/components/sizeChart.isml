@@ -1,10 +1,14 @@
 <div class="maf-modal-main maf-modal-main-sizechart">
 
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#sizeChartModal">
+    <iscomment> <button type="button" class="btn btn-link" data-toggle="modal" data-target="#sizeChartModal">
         Size&nbsp;Chart
-    </button>
+    </button> </iscomment>
+    <a href="#maf_size_chart" class="btn btn-link">
+        ${Resource.msg('link.size_chart', 'product', null)}
+    </a>
 
-    <div id="sizeChartModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel"
+
+    <iscomment> <div id="sizeChartModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -92,6 +96,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> </iscomment>
 
 </div>

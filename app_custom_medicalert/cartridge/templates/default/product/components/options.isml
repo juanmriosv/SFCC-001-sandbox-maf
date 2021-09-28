@@ -7,12 +7,3 @@
         </div>
     </div>
 </isloop>
-
-    <div class="maf-modal-main maf-modal-main-membership">
-
-        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#membershipModalPDP">
-            ${Resource.msg('link.memberships.options', 'memberships', null)}
-        </button>
-        <isinclude template="components/maf_blocks/plansModalPDP" />
-
-    </div>

@@ -1,8 +1,12 @@
-<div class="row maf-component maf-component-engraving maf-component-engraving-pdp">
-    <div class="engraving-fields col-12">
+<div class="maf-component maf-component-engraving maf-component-engraving-pdp">
 
-        <div class="attribute">
-            <h2>${Resource.msg('label.engraving.header', 'engraving', null)}</h2>
+    <iscomment> ENGRAVING FORM - LEFT SIDE </iscomment>
+    <div class="engraving-fields row">
+
+        <div class="attribute col-md-6">
+
+            <p>${Resource.msg('label.engraving.header', 'engraving', null)}</p>
+
             <form>
             <isloop items=${pdict.engraving} var="line" status="status">
                 <isset name="engravingValue" value="${pdict.engravingValues['engravingline'+(status.index + 1)]}" scope="page"/>
@@ -12,14 +16,37 @@
                     <span class="counter"  id="counter<isprint value=${status.index + 1} style="INTEGER"/>">${line}</span>
                 </div>
             </isloop>
+                <div style="margin: 1em 0;">
+                    <label for="noPersonalization" style=" font-weight: normal; font-weight: 400; text-transform: initial; ">
+                        <input type="checkbox" id="noPersonalization" name="NoPersonalization">
+                        I confirm the engraving and if left blank My Medical ID will only contain my ID number and MedicAlert 24/7 phone number.
+                    </label>
+                </div>
             </form>
         </div>
 
-        <div class="maf-modal-main maf-modal-main-engraving">
+        <div class="maf-modal-main maf-modal-main-engraving col-md-6">
 
-            <button id="previewbtn" type="button" class="btn btn-link" data-toggle="modal" data-target="#previewModal">
+            <iscomment> <button id="previewbtn" type="button" class="btn btn-link" data-toggle="modal" data-target="#previewModal">
                 ${Resource.msg('label.engraving.preview', 'engraving', null)}
-            </button>
+            </button> </iscomment>
+            <p>${Resource.msg('label.engraving.preview', 'engraving', null)}</p>
+
+
+            <div class="maf-modal-body modal-body-engraving">
+
+                <div class="engraving-preview">
+                    <div class="engraving-wrap">
+                        <div>
+                            <p>${Resource.msg('preview.engraving.placeholdertop', 'engraving', null)}</p>
+                            <div id="engravingwrap"><p id="maf-engraving-placeholder">${Resource.msg('preview.engraving.placeholdercenter', 'engraving', null)}</p></div>
+                            <p>${Resource.msg('preview.engraving.placeholderbottom', 'engraving', null)}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 
             <div id="previewModal" class="modal fade maf-component-engraving" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel"
                 aria-hidden="true" style="display: none;">
@@ -51,8 +78,9 @@
 
         </div>
 
-
     </div>
+
+
 </div>
 
 

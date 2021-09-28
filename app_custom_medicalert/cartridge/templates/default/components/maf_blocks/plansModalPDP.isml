@@ -59,40 +59,59 @@
                             <a id="btnAdvP_s" type="button" class="btn btn-content btn-outline-info">Select</a>
                         </div>
                         </section>
-                      </div>
+                    </div>
 
-		    </div>
+		            </div>
+                <div class="row maf-element maf-link-modal">
+                  <a id="btnNoPlan_s" type="button" class="btn btn-link">I do not want to be protected, continue without a plan</a>
+                </div>
 
-
-		  </div>
+              </div>
 
 		</div>
 	</div>
 </div>
 
+<style>
+.maf-modal-memberships .modal-body-membership>.row.maf-link-modal{
+    margin: 3em 0 0 2em;
+}
+</style>
+
+
 <script>
 $(function() {
-
+  $('#btnNoPlan_s').click(function(e) {
+    var value1 = 'x';
+    e.preventDefault();
+    membershipPlans.selectedIndex=0;
+    $("#membershipModalPDP").modal("toggle");
+    maf_addToCart();
+    // element_scroll_focus('#membershipPlans');
+  });
   $('#btnBasic, #btnBasic_s').click(function(e) {
     var value1 = 'x';
     e.preventDefault();
     membershipPlans.selectedIndex=1;
     $("#membershipModalPDP").modal("toggle");
-    element_scroll_focus('#membershipPlans');
+    maf_addToCart();
+    // element_scroll_focus('#membershipPlans');
   });
   $('#btnAdv, #btnAdv_s').click(function(e) {
     var value1 = 'x';
     e.preventDefault();
     membershipPlans.selectedIndex=2;
     $("#membershipModalPDP").modal("toggle");
-    element_scroll_focus('#membershipPlans');
+    maf_addToCart();
+    // element_scroll_focus('#membershipPlans');
   });
   $('#btnAdvP, #btnAdvP_s').click(function(e) {
     var value1 = 'x';
     e.preventDefault();
     membershipPlans.selectedIndex=3;
     $("#membershipModalPDP").modal("toggle");
-    element_scroll_focus('#membershipPlans');
+    maf_addToCart();
+    // element_scroll_focus('#membershipPlans');
     });
 });
 
@@ -101,6 +120,13 @@ function element_scroll_focus(element){
     scrollTop: $(element).offset().top-200
   });
   $(element).focus();
- 
+}
+function maf_addToCart(){
+  $('.add-to-cart').click();
+  $('html, body').animate({
+    scrollTop: $('.minicart-link').offset().top-200
+  });
+  $('.minicart-link, .minicart-icon').click();
+
 }
 </script>
