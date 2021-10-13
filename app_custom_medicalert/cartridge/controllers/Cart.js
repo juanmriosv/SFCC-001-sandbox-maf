@@ -14,7 +14,6 @@ server.extend(base);
 //var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
 //var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 
-
 server.append('AddProduct', function (req, res, next) {
     var viewData = res.getViewData();
     var rdat = req.httpParameterMap; // eslint-disable-line
@@ -41,6 +40,8 @@ server.append('AddProduct', function (req, res, next) {
             });
         }
     });
+    
+    calculateDonationPrices(currentBasket,2501);
 
     return next();
     });
@@ -95,5 +96,94 @@ server.append('AddProduct', function (req, res, next) {
    return next();
 
     });
+
+    server.get('CheckProductLineItem', function (req, res, next) {
+        var viewData = res.getViewData();
+        var rdat = req.httpParameterMap; // eslint-disable-line
+        var CheckOption = false;
+        var currentBasket = BasketMgr.getCurrentOrNewBasket();
+        var lineItems = currentBasket.getProductLineItems().toArray();
+        lineItems.forEach(function (dli) {
+        var productOptions = dli.getOptionProductLineItems().toArray();
+         productOptions.forEach(function (option){ 
+          if (option.optionValueID !== 00000 ) {
+            CheckOption = true;
+          }    
+         }); 
+        }); 
+        
+        
+        res.json({ value: CheckOption });
+        next();
+    });
+
+server.get('MAFRemoteAddToCart', function (req, res, next) {
+
+    var MAFProductId = req.querystring.pid;
+    var MAFProductAmt = req.querystring.amt;
+
+    var URLUtils = require('dw/web/URLUtils');
+    var Transaction = require('dw/system/Transaction');
+    var cartHelper = require('*/cartridge/scripts/cart/cartHelpers');
+    var basketCalculationHelpers = require('*/cartridge/scripts/helpers/basketCalculationHelpers');
+    var ProductMgr = require('dw/catalog/ProductMgr');
+    var currentBasket = BasketMgr.getCurrentOrNewBasket();
+    var childProducts = [];
+    var options = [];
+    var result = {};
+    var quantity = 1;
+
+    var product = ProductMgr.getProduct(MAFProductId);
+    if (product && MAFProductAmt) {
+        Transaction.wrap(function () {
+            result = cartHelper.addProductToCart(
+                currentBasket,
+                MAFProductId,
+                quantity,
+                childProducts,
+                options
+            );
+            calculateDonationPrices (currentBasket, MAFProductAmt);
+            if (!result.error) {
+                cartHelper.ensureAllShipmentsHaveMethods(currentBasket);
+                basketCalculationHelpers.calculateTotals(currentBasket);
+            }
+        });
+
+
+    }
+    //res.redirect(URLUtils.url('Checkout-Show'));
+
+    res.redirect(URLUtils.url('Cart-Show'));
+    next();
+});
+
+    function calculateDonationPrices (basket, amt) {
+        var Transaction = require('dw/system/Transaction');
+        var taxMgr = require('dw/order/TaxMgr');
+        var donationProductID = "90000A";
+        var basketDonationItems = basket.getProductLineItems(donationProductID);
+        var productLineItem = null;
+        var promotionID = "SetDonationPromo1";
+
+        Transaction.wrap(function () {
+            if (basketDonationItems.length > 0) {
+                 basketDonationItems.toArray().forEach(function (productLineItem) {
+                    var adjustment = productLineItem.getPriceAdjustmentByPromotionID(promotionID);
+                    if (adjustment != null) {
+                        productLineItem.removePriceAdjustment(adjustment);
+                    }
+                    var priceAdjustment = productLineItem.createPriceAdjustment(promotionID);
+                    priceAdjustment.setPriceValue(parseFloat(amt));
+                    productLineItem.setQuantityValue(1);
+                    //priceAdjustment.taxClassID = taxMgr.customRateTaxClassID;
+                    priceAdjustment.setTaxRate(0);
+                    priceAdjustment.updateTax(0);
+                 });
+             }
+         });
+        }
+
+        
 
 module.exports = server.exports();

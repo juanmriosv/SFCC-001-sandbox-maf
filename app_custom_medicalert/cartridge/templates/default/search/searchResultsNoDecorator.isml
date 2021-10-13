@@ -2,19 +2,11 @@
     <isinclude template="reporting/reportingUrls" />
 </isif>
 
-<div class="container maf-element maf-element-h1">
-    <div class="row">
-        <h1 class="col header page-title">
-            ${Resource.msg('h1.plp', 'search', null)} ${pdict.productSearch.category.name}
-        </h1>
-    </div>
-</div>
-
-<!--- Search Results Banner --->
+<iscomment> Search Results Banner </iscomment>
 <div class="maf-plp-banner-wrap">
     <isif condition="${pdict.productSearch.isCategorySearch}">
 
-        <!-- MAF CATEGORY BANNER -->
+        <iscomment> MAF CATEGORY BANNER </iscomment>
         <isinclude template="components/maf_blocks/plpBannerDefault" />
 
     <iselse>

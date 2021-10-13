@@ -4,7 +4,7 @@
 
     <isinclude template="/components/header/skipNav" />
 
-    <nav role="navigation">
+    <nav>
 
         <!-- Header Logo and system nav & Hamburger-->
         <div class="header container">
@@ -22,7 +22,7 @@
 
                         <!-- Logo Component -->
                         <div class="navbar-header brand">
-                            <a class="logo-home" href="${URLUtils.url('Home-Show')}">
+                            <a class="logo-home" href="https://www.medicalert.org/">
                                 <iscomment> <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" /> </iscomment>
                                 <img class="hidden-sm-down" src="https://blog.medicalert.org/wp-content/uploads/2021/05/medicalert-logo-600x97-1.png" alt="${Resource.msg('global.storename', 'common', null)}" />
                                 <iscomment> <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-small.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" /> </iscomment>
@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="maf-component maf-component-donate hidden-sm-down">
-                                <a target="_blank" role="button" href="https://blog.medicalert.org/donate" class="btn btn-danger maf-element maf-element-donate-button"><i class="fa fa-heart" aria-hidden="true"></i> DONATE</a>
+                                <a role="button" href="https://blog.medicalert.org/donate" class="btn btn-danger maf-element maf-element-donate-button"><i class="fa fa-heart" aria-hidden="true"></i> DONATE</a>
                             </div>
 
                             <div class="hidden-md-down">

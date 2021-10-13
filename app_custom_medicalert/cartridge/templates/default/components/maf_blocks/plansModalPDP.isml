@@ -1,10 +1,15 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
 <div id="membershipModalPDP" class="modal maf-modal-memberships fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
 
             <div class="modal-header">
-                <h2 class="modal-title" id="membershipModalDefaultLabel">Membership Subscription Plans</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h2 class="modal-title" id="membershipModalDefaultLabel">
+                  <span class="maf-number-circled maf-number-circled-selectplan">3</span>
+                  ${Resource.msg('header.select.plans', 'memberships', null)}
+                </h2>
+                <button id="maf_close_modal_PDPmembership" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
 
             <div class="modal-body-membership container-fluid">
@@ -21,7 +26,7 @@
                         </ul>
 
                         <div class="maf-button">
-                          <a id="btnBasic_s" type="button" class="btn btn-content btn-outline-info">Select</a>
+                          <a id="btnOffer_3Years_Basic" type="button" class="btn btn-content btn-outline-info">Select</a>
                         </div>
                       </section>
 
@@ -63,7 +68,7 @@
 
 		            </div>
                 <div class="row maf-element maf-link-modal">
-                  <a id="btnNoPlan_s" type="button" class="btn btn-link">I do not want to be protected, continue without a plan</a>
+                  <a id="btnConfirmNoPlan" type="button" class="btn btn-link maf-link">I do not want to be protected, continue without a plan</a>
                 </div>
 
               </div>
@@ -71,6 +76,86 @@
 		</div>
 	</div>
 </div>
+
+
+
+<iscomment> [START] 3 Years Basic </iscomment>
+<div id="3yearPlanBasicModalPDP" class="modal maf-modal-memberships fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header modal-header-primary">
+          <h2 class="modal-title" id="membershipModalDefaultLabel">
+          SAVE WITH MEDIC ALERT
+            <iscomment> ${Resource.msg('header.select.confirm.noplan', 'memberships', null)} </iscomment>
+          </h2>
+          <button id="maf_close_modal_PDPmembership" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+
+      <div class="modal-body-membership container-fluid">
+
+        <div>
+          <strong>Extend your protection and save 15% on a 3 year membership plan.</strong>
+          <iscomment> <iscontentasset aid="maf-modal-limited-benefits-without-plan" /> </iscomment>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <a id="3YearPlan_Basic_Yes" type="button" class="btn btn-content btn-outline-info">$63.72 - 15% SAVINGS FOR 3 YEARS</a>
+          </div>
+          <div class="col-6">
+            <a id="btnBasic_s" type="button" class="btn btn-link maf-link">No Thanks, Sign Up for 1 Year</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<iscomment> [END] 3 Years Basic </iscomment>
+
+
+<iscomment> [START] NO PLAN MODAL </iscomment>
+<div id="noPlanConfirmationModalPDP" class="modal maf-modal-memberships fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header modal-header-alert">
+          <h2 class="modal-title" id="membershipModalDefaultLabel">
+            ${Resource.msg('header.select.confirm.noplan', 'memberships', null)}
+          </h2>
+          <button id="maf_close_modal_PDPmembership" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+
+      <div class="modal-body-membership container-fluid">
+
+        <div>
+          <iscontentasset aid="maf-modal-limited-benefits-without-plan" />
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <a id="btnNoPlan_s" type="button" class="btn btn-link maf-link">Continue without Plan</a>
+          </div>
+          <div class="col-6">
+            <a id="YesSelectaPlan" type="button" class="btn btn-lg btn-block btn-primary">Select a Plan</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<iscomment> [END] NO PLAN MODAL </iscomment>
+
+
+
+
+
+
+
 
 <style>
 .maf-modal-memberships .modal-body-membership>.row.maf-link-modal{
@@ -80,12 +165,25 @@
 
 
 <script>
-$(function() {
+window.addEventListener("DOMContentLoaded", function(){
+  $('#btnOffer_3Years_Basic').click(function(e) {
+    $("#membershipModalPDP").modal("toggle");
+    $("#3yearPlanBasicModalPDP").modal("toggle");
+  });
+  $('#YesSelectaPlan').click(function(e) {
+    $("#noPlanConfirmationModalPDP").modal("toggle");
+    $("#membershipModalPDP").modal("toggle");
+  });
+  $('#btnConfirmNoPlan').click(function(e) {
+    e.preventDefault();
+    $("#membershipModalPDP").modal("toggle");
+    $("#noPlanConfirmationModalPDP").modal("toggle");
+  });
   $('#btnNoPlan_s').click(function(e) {
     var value1 = 'x';
     e.preventDefault();
     membershipPlans.selectedIndex=0;
-    $("#membershipModalPDP").modal("toggle");
+    $("#noPlanConfirmationModalPDP").modal("toggle");
     maf_addToCart();
     // element_scroll_focus('#membershipPlans');
   });
@@ -93,7 +191,8 @@ $(function() {
     var value1 = 'x';
     e.preventDefault();
     membershipPlans.selectedIndex=1;
-    $("#membershipModalPDP").modal("toggle");
+    $("#3yearPlanBasicModalPDP").modal("toggle");
+    // $("#membershipModalPDP").modal("toggle");
     maf_addToCart();
     // element_scroll_focus('#membershipPlans');
   });

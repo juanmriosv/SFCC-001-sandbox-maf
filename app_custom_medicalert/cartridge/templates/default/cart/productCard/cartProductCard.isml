@@ -23,7 +23,6 @@
                                     <p class="line-item-attributes">${option.displayName}</p>
                                 </div>
                             </isif>
-
                         </isloop>
 
                        <iscomment> Engraving </iscomment>

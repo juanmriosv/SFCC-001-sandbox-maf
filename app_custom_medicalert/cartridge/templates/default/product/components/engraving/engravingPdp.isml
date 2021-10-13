@@ -3,29 +3,8 @@
     <iscomment> ENGRAVING FORM - LEFT SIDE </iscomment>
     <div class="engraving-fields row">
 
-        <div class="attribute col-md-6">
 
-            <p>${Resource.msg('label.engraving.header', 'engraving', null)}</p>
-
-            <form>
-            <isloop items=${pdict.engraving} var="line" status="status">
-                <isset name="engravingValue" value="${pdict.engravingValues['engravingline'+(status.index + 1)]}" scope="page"/>
-                <div>
-                    <label>${Resource.msg('label.engraving.fields', 'engraving', null)} <isprint value=${status.index + 1} style="INTEGER"/> </label>
-                    <input type="text" id="engravingline<isprint value=${status.index + 1} style="INTEGER"/>" maxlength="${line}" value="${engravingValue? engravingValue:''}" class="inputfield_en not_disabled">
-                    <span class="counter"  id="counter<isprint value=${status.index + 1} style="INTEGER"/>">${line}</span>
-                </div>
-            </isloop>
-                <div style="margin: 1em 0;">
-                    <label for="noPersonalization" style=" font-weight: normal; font-weight: 400; text-transform: initial; ">
-                        <input type="checkbox" id="noPersonalization" name="NoPersonalization">
-                        I confirm the engraving and if left blank My Medical ID will only contain my ID number and MedicAlert 24/7 phone number.
-                    </label>
-                </div>
-            </form>
-        </div>
-
-        <div class="maf-modal-main maf-modal-main-engraving col-md-6">
+        <div class="maf-modal-main maf-modal-main-engraving col-md-5">
 
             <iscomment> <button id="previewbtn" type="button" class="btn btn-link" data-toggle="modal" data-target="#previewModal">
                 ${Resource.msg('label.engraving.preview', 'engraving', null)}
@@ -77,6 +56,30 @@
             </div>
 
         </div>
+
+
+        <div class="attribute col-md-7">
+
+            <p>${Resource.msg('label.engraving.header', 'engraving', null)}</p>
+
+            <form>
+            <isloop items=${pdict.engraving} var="line" status="status">
+                <isset name="engravingValue" value="${pdict.engravingValues['engravingline'+(status.index + 1)]}" scope="page"/>
+                <div>
+                    <label>${Resource.msg('label.engraving.fields', 'engraving', null)} <isprint value=${status.index + 1} style="INTEGER"/> </label>
+                    <input type="text" id="engravingline<isprint value=${status.index + 1} style="INTEGER"/>" maxlength="${line}" value="${engravingValue? engravingValue:''}" class="inputfield_en not_disabled">
+                    <span class="counter"  id="counter<isprint value=${status.index + 1} style="INTEGER"/>">${line}</span>
+                </div>
+            </isloop>
+                <div class="maf-confirm-personalization">
+                    <label for="noPersonalization" style=" font-weight: normal; font-weight: 400; text-transform: initial; ">
+                        <input type="checkbox" id="noPersonalization" name="NoPersonalization">
+                        I confirm the engraving and if left blank My Medical ID will only contain my ID number and MedicAlert 24/7 phone number.
+                    </label>
+                </div>
+            </form>
+        </div>
+
 
     </div>
 

@@ -23,6 +23,7 @@ function showTab(n) {
         ifPreviousButton();
     });
     nextButton.removeAttribute('onclick');
+    $('.text-danger').remove();
     nextButton.innerHTML = "NEXT: SELECT PLAN";
     checkToEnablePersonalizeButton(confirmPersonalization);
   };
@@ -74,10 +75,12 @@ function checkToEnablSizesButton(sizeSelection){
     if(sizeSelection.selectedIndex > 0){
         nextButton.parentElement.removeAttribute('onclick');
         nextButton.classList.remove("disabled");
+        $('#size-1').removeClass('is-invalid');
+        $('.text-danger').remove();
         // nextButton.disabled = false;
     }
     else{
-        nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClickedSize()");
+        nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClicked()");
         nextButton.classList.add("disabled");
         // nextButton.disabled = true;
     };
@@ -86,10 +89,12 @@ function checkToEnablSizesButton(sizeSelection){
         if(sizeSelection.selectedIndex > 0){
             nextButton.parentElement.removeAttribute('onclick');
             nextButton.classList.remove("disabled");
+            $('#size-1').removeClass('is-invalid');
+            $('.text-danger').remove();
             // nextButton.disabled = false;
         }
         else{
-            nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClickedSize()");
+            nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClicked()");
             nextButton.classList.add("disabled");
             // nextButton.disabled = true;
         };
@@ -99,24 +104,28 @@ function checkToEnablSizesButton(sizeSelection){
 function checkToEnablePersonalizeButton(checkbox){
     if(checkbox.checked){
         nextButton.classList.remove("disabled");
+        nextButton.parentElement.removeAttribute('onclick');
         nextButton.setAttribute("data-toggle", "modal");
         nextButton.setAttribute("data-target", "#membershipModalPDP");
+        $('.text-danger').remove();
         // nextButton.disabled = false;
     }
     else{
-        nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClickedEngraving()");
         nextButton.classList.add("disabled");
+        nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClickedPlans()");
         // nextButton.disabled = true;
     };
     checkbox.addEventListener("change", function() {
         if(checkbox.checked){
             nextButton.classList.remove("disabled");
+            nextButton.parentElement.removeAttribute('onclick');
             nextButton.setAttribute("data-toggle", "modal");
             nextButton.setAttribute("data-target", "#membershipModalPDP");
+            $('.text-danger').remove();
             // nextButton.disabled = false;
         }
         else{
-            nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClickedEngraving()");
+            nextButton.parentElement.setAttribute("onclick", "ifDisableButtonisClickedPlans()");
             nextButton.classList.add("disabled");
             // nextButton.disabled = true;
         };
@@ -124,10 +133,11 @@ function checkToEnablePersonalizeButton(checkbox){
 }
 
 
-function ifDisableButtonisClickedSize(){
-    $('#size-1').focus();
+function ifDisableButtonisClicked(){
+    $('#size-1').addClass('is-invalid').focus();
+    $('#size-1').after( "<p class='text-danger'>Please select size to continue</p>" ).stop();
 }
-function ifDisableButtonisClickedEngraving(){
-    console.log('no personalization');
-    $('#noPersonalization').focus();
+function ifDisableButtonisClickedPlans(){
+    $('#noPersonalization').addClass('is-invalid').focus().filter(':visible');
+    $('#noPersonalization').before( "<p class='text-danger'>Please Confirm Your Selection to continue</p>" ).stop();
 }

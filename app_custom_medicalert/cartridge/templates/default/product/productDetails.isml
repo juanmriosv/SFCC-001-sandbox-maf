@@ -20,7 +20,7 @@
                 <isinclude template="product/components/imageCarousel" />
 
                 <!-- [RIGHT SIDE] Product Name and Details -->
-                <div class="col-12 col-sm-7">
+                <div class="maf-pdp-right-side col-12 col-sm-7">
 
                     <!--Breadcrumbs Desktop Only-->
                     <div class="row">
@@ -72,7 +72,7 @@
 
                                     <iscomment> HEADER PANEL 1 </iscomment>
                                     <h2>
-                                        <span class="maf-number-circled">1</span> CHOOSE SIZE AND COLOR
+                                        <span class="maf-number-circled">1</span> ${Resource.msg('label.panel.one', 'product', null)}
                                     </h2>
 
                                     <iscomment> CONTENT PANEL 1 </iscomment>
@@ -179,7 +179,7 @@
                                 <div style="overflow:auto;">
                                     <div style="float:right;">
                                         <button class="btn btn-info" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                        <div onclick="ifDisableButtonisClicked()" style="display:inline-block">
+                                        <div onclick="window.event.cancelBubble = true; ifDisableButtonisClicked(); this.onclick=null;" style="display:inline-block">
                                             <button class="btn btn-primary disabled" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                         </div>
                                     </div>

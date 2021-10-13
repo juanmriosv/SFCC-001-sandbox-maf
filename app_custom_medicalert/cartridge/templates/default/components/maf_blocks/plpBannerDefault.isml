@@ -1,5 +1,81 @@
 <isslot id="maf-plp-banner-m" description="Banner for Category Listing Page" context="global" />
 <iscomment> <isslot id="maf-plp-banner-m" context="category" description="Category Heading Banner" context-object="${pdict.ProductSearchResult.category}" /> </iscomment>
 
+
+<section>
+
+        <div class="container maf-element maf-element-h1">
+            <div class="row">
+                <h1 class="col header page-title">
+                    ${Resource.msg('h1.plp', 'search', null)} ${pdict.productSearch.category.name}
+                </h1>
+            </div>
+        </div>
+
 <!-- MAF MEMBERS PLANS MODAL -->
+<div class="maf-button maf-button-m-m0">
+	<a class="btn btn-secondary maf-btn-toggle" data-toggle="collapse" href="#collapseBannerPlpDefault" role="button" aria-expanded="false" aria-controls="collapseBannerPlpDefault">Learn How it Works?</a>
+</div>
+
+<div class="maf-components maf-components-banner-plp-default collapse dont-collapse-sm" id="collapseBannerPlpDefault">
+    <div class="maf-col-2">
+
+		<div class="maf-copy">
+			<p>As the creator of the original medical ID, we know a thing or two about protecting lives. Our stylish and durable medical IDs are recognized by first responders the world over. Paired with a MedicAlert membership, you get lifesaving benefits to ensure you receive the best possible care in your moment of need.</p>
+			<div class="maf-text-link">
+				<a class="maf-text-link-default" data-toggle="modal" data-target="#membershipModalDefault" href="https://blog.medicalert.org/memberships">Learn more about memberships</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="maf-col-2 maf-float-right">
+
+		<div class="maf-icons maf-fade">
+			<figure class="fade-item f1">
+                <img src="${URLUtils.staticURL('/images/SearchBanner/jewelry-and-scan2.png')}" alt="" />
+				<figcaption>Select products to suit <span class="maf-brake-desktop">your lifestyle.</span><span>1</span></figcaption>
+			</figure>
+			<span>+</span>
+			<figure class="fade-item f2">
+                <img src="${URLUtils.staticURL('/images/SearchBanner/phone4.png')}" alt="" />
+				<figcaption>Pick an annual membership <span class="maf-brake-desktop">subscription.</span><span>2</span></figcaption>
+			</figure>
+			<span>=</span>
+			<figure class="fade-item f3">
+                <img src="${URLUtils.staticURL('/images/SearchBanner/face4.png')}" alt="" />
+				<figcaption>Live your life with <span class="maf-brake-desktop">confidence.</span><span>3</span></figcaption>
+			</figure>
+		</div>
+	</div>
+</div>
+
+
+</section>
+
+
+<style>
+	.maf-fade .fade-item{
+		  opacity: 0;
+	}
+
+  .maf-fade .f1 {
+    animation: fade-in-item 1s .2s ease-out forwards;
+  }
+  .maf-fade .f2 {
+    animation: fade-in-item 1s .6s ease-out forwards;
+  }
+
+  .maf-fade .f3 {
+    animation: fade-in-item 1s 1s ease-out forwards;
+  }
+
+
+@-webkit-keyframes fade-in-item {
+  0%   { display: block; opacity: 0;  }
+  30% { display: block; opacity: .5; }
+  60% { display: block; opacity: .8; }
+  100% { display: block; opacity: 1; } 
+}
+</style>
 <isinclude template="components/maf_blocks/plansModalDefault" />
